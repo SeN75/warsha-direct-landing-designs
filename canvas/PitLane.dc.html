@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>ورشة دايركت — الاتجاه ج</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@600;800;900&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#050D13}
+a{color:#43C6F2}a:hover{color:#9FE3FA}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+.k{font-family:'Noto Kufi Arabic','Somar',system-ui,sans-serif}
+.m{font-family:'IBM Plex Mono',ui-monospace,monospace;direction:ltr;unicode-bidi:isolate}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px;align-items:stretch}
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.b3{grid-column:span 3}.b2{grid-column:span 2}.b4{grid-column:span 4}
+.orbit-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.price{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.lane{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #FFB23F;outline-offset:3px}
+.btn{cursor:pointer;transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 0 6px rgba(67,198,242,.16),0 12px 40px rgba(67,198,242,.35)}
+.spot{cursor:pointer}
+@keyframes draw{from{stroke-dashoffset:1400}to{stroke-dashoffset:0}}
+@keyframes scan{0%{left:-4%}100%{left:100%}}
+@keyframes ping{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.4);opacity:0}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(50%)}}
+@keyframes drive{0%{right:2%}100%{right:88%}}
+@keyframes lit{0%{background:#0B1A24;color:#93AEBF;border-color:rgba(130,190,225,.25);box-shadow:none}5%,22%{background:#43C6F2;color:#04121A;border-color:#43C6F2;box-shadow:0 0 30px rgba(67,198,242,.6)}30%,100%{background:#0B1A24;color:#93AEBF;border-color:rgba(130,190,225,.25);box-shadow:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes unspin{to{transform:rotate(-360deg)}}
+@keyframes grow{from{transform:scaleY(.15)}to{transform:scaleY(1)}}
+@keyframes fill{from{width:8%}to{width:var(--w)}}
+@keyframes stamp{0%,40%{transform:scale(2.2) rotate(-18deg);opacity:0}55%{transform:scale(.92) rotate(-12deg);opacity:1}65%,100%{transform:scale(1) rotate(-12deg);opacity:1}}
+@keyframes cycle{0%,30%{opacity:1;transform:translateY(0)}33%,100%{opacity:0;transform:translateY(-8px)}}
+@keyframes glowspin{to{--a:360deg}}
+@keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+@property --a{syntax:'<angle>';inherits:false;initial-value:0deg}
+.draw path,.draw circle,.draw line{stroke-dasharray:1400;animation:draw 2.6s cubic-bezier(.6,0,.2,1) both}
+.scanline{animation:scan 3.2s cubic-bezier(.5,0,.5,1) infinite}
+.ping{animation:ping 1.8s ease-out infinite}
+.marquee{animation:marquee 38s linear infinite}
+.car{animation:drive 9s cubic-bezier(.65,0,.35,1) infinite}
+.st{animation:lit 9s linear infinite both;background:#0B1A24;color:#93AEBF;border-color:rgba(130,190,225,.25)}
+.ring{animation:spin 40s linear infinite}
+.node{animation:unspin 40s linear infinite}
+.bar{transform-origin:bottom;animation:grow 1.6s cubic-bezier(.2,.8,.2,1) both}
+.fillbar{animation:fill 2.4s cubic-bezier(.2,.8,.2,1) both}
+.stamp{animation:stamp 3.6s ease infinite}
+.cyc{animation:cycle 6s ease infinite}
+.feat-border{background:conic-gradient(from var(--a),#43C6F2,#2B3891,#FFB23F,#43C6F2);animation:glowspin 6s linear infinite}
+.blink{animation:pulse 2s ease-in-out infinite}
+@supports (animation-timeline: view()){
+@media (prefers-reduced-motion:no-preference){
+@keyframes rv{from{opacity:0;transform:translateY(40px) scale(.98)}to{opacity:1;transform:none}}
+.rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+@keyframes par{from{transform:translateY(80px)}to{transform:translateY(-80px)}}
+.par{animation:par linear both;animation-timeline:view()}
+}}
+@media (max-width:980px){.hero-grid,.orbit-grid{grid-template-columns:minmax(0,1fr)}.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.b3,.b2,.b4{grid-column:span 2}.price{grid-template-columns:repeat(2,minmax(0,1fr))}.nav-links{display:none!important}.mega{font-size:56px!important}.giant{font-size:96px!important}}
+@media (max-width:600px){.price{grid-template-columns:minmax(0,1fr)}.lane{grid-template-columns:minmax(0,1fr);gap:10px}.lane-track{display:none!important}.mega{font-size:40px!important}.giant{font-size:64px!important}}
+@media (prefers-reduced-motion:reduce){.draw path,.draw circle,.draw line,.scanline,.ping,.marquee,.car,.st,.ring,.node,.bar,.fillbar,.stamp,.cyc,.feat-border,.blink{animation:none!important}.scanline,.car{display:none}.cyc{opacity:0}.cyc:first-child{opacity:1}.st{background:#43C6F2!important;color:#04121A!important}.btn{transition:none}.btn:hover{transform:none}}
+</style>
+</helmet>
+<div style="font-family: 'IBM Plex Sans Arabic', 'Somar', system-ui, sans-serif; color: #EAF3F8; background: #050D13; line-height: 1.6; font-size: 16px; overflow: hidden; position: relative;">
+
+<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(rgba(130,190,225,0.16) 1px, transparent 1px); background-size: 28px 28px; mask-image: linear-gradient(#000, transparent 1400px); -webkit-mask-image: linear-gradient(#000, transparent 1400px);"></div>
+<div aria-hidden="true" style="position: absolute; top: -260px; left: -200px; width: 820px; height: 820px; border-radius: 50%; background: radial-gradient(circle, rgba(43,56,145,0.55), transparent 65%); pointer-events: none;"></div>
+
+<header style="position: sticky; top: 0; z-index: 30; background: rgba(5,13,19,0.72); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(130,190,225,0.12);">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; min-height: 72px; gap: 24px;">
+<span class="k" style="display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px;">
+<svg width="34" height="34" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="9" fill="#43C6F2"></rect><path d="M21 9l-8 9 8 9" stroke="#04121A" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><path d="M27 13l-4 5 4 5" stroke="#04121A" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"></path></svg>
+ورشة دايركت</span>
+<nav class="nav-links" aria-label="القائمة الرئيسية" style="display: flex; gap: 30px; font-size: 15px;">
+<a href="#c-scan" style="color: #C2D6E2; text-decoration: none;">الفحص الذكي</a>
+<a href="#c-lane" style="color: #C2D6E2; text-decoration: none;">رحلة المركبة</a>
+<a href="#c-bento" style="color: #C2D6E2; text-decoration: none;">المزايا</a>
+<a href="#c-price" style="color: #C2D6E2; text-decoration: none;">الباقات</a>
+</nav>
+<div style="display: flex; gap: 10px; align-items: center;">
+<a href="#login" style="min-height: 44px; display: inline-flex; align-items: center; padding: 0 12px; color: #EAF3F8; text-decoration: none; font-weight: 600;">دخول</a>
+<a href="#signup" class="btn" style="min-height: 44px; display: inline-flex; align-items: center; padding: 0 20px; border-radius: 10px; background: #43C6F2; color: #04121A; text-decoration: none; font-weight: 700;">ابدأ مجاناً</a>
+</div>
+</div>
+</header>
+
+<main>
+<section id="c-scan" style="position: relative; padding: 72px 0 56px;">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px;">
+<div style="display: flex; flex-direction: column; gap: 20px; max-width: 1000px;">
+<span class="m" style="align-self: flex-start; font-size: 13px; letter-spacing: 2px; color: #43C6F2; border: 1px solid rgba(67,198,242,0.4); padding: 6px 12px; border-radius: 6px;"><span class="blink" style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #4ADE9B; margin-left: 8px;"></span>LIVE · WORKSHOP OS</span>
+<h1 class="k mega" style="margin: 0; font-size: 84px; line-height: 1.15; font-weight: 900; letter-spacing: -1px;">من الحادث إلى التسليم.<br><span style="color: transparent; -webkit-text-stroke: 2px #43C6F2;">بدون ورقة واحدة.</span></h1>
+<p style="margin: 0; font-size: 20px; color: #A9C1D0; max-width: 34em;">ورشة دايركت تفحص الضرر بالذكاء الاصطناعي، تصدر عرض السعر والفاتورة المعتمدة، وتربطك بالموردين وشركات التأمين — كلها في نظام واحد.</p>
+<div style="display: flex; gap: 12px; flex-wrap: wrap;">
+<a href="#signup" class="btn" style="min-height: 56px; display: inline-flex; align-items: center; gap: 10px; padding: 0 28px; border-radius: 12px; background: #43C6F2; color: #04121A; text-decoration: none; font-weight: 800; font-size: 17px;">ابدأ تجربتك المجانية
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg></a>
+<a href="#c-lane" style="min-height: 56px; display: inline-flex; align-items: center; padding: 0 24px; border-radius: 12px; border: 1px solid rgba(130,190,225,0.3); color: #EAF3F8; text-decoration: none; font-weight: 600; font-size: 17px;">شاهد رحلة المركبة</a>
+</div>
+</div>
+
+<div class="hero-grid">
+<div style="position: relative; border-radius: 24px; border: 1px solid rgba(130,190,225,0.18); background: linear-gradient(180deg, #0B1A24, #071219); padding: 20px; overflow: hidden;">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+<span class="m" style="font-size: 12px; color: #93AEBF; letter-spacing: 1px;">AI DAMAGE SCAN · أ ب ج ١٢٣٤</span>
+<span style="font-size: 13px; color: #4ADE9B; display: flex; align-items: center; gap: 6px;"><span class="blink" style="width: 8px; height: 8px; border-radius: 50%; background: #4ADE9B;"></span>جاري التحليل</span>
+</div>
+<div style="position: relative; width: 100%; aspect-ratio: 600 / 240;">
+<div aria-hidden="true" style="position: absolute; inset: 0; background-image: linear-gradient(rgba(67,198,242,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(67,198,242,0.08) 1px, transparent 1px); background-size: 24px 24px;"></div>
+<svg class="draw" viewBox="0 0 600 240" role="img" aria-label="مخطط سلكي لسيارة يتم فحصها" style="position: absolute; inset: 0; width: 100%; height: 100%;" fill="none" stroke="#43C6F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M40 165 L58 128 Q68 116 95 112 L200 106 L258 66 Q272 58 292 58 L392 58 Q414 58 430 70 L482 108 L546 116 Q566 120 568 140 L570 165"></path>
+<path d="M40 165 L104 165 M176 165 L434 165 M506 165 L570 165"></path>
+<circle cx="140" cy="165" r="34"></circle><circle cx="140" cy="165" r="15"></circle>
+<circle cx="470" cy="165" r="34"></circle><circle cx="470" cy="165" r="15"></circle>
+<path d="M272 70 L318 70 L318 104 L222 106 Z" stroke-opacity="0.7"></path>
+<path d="M330 70 L392 70 Q404 70 414 78 L442 104 L330 104 Z" stroke-opacity="0.7"></path>
+<line x1="322" y1="106" x2="322" y2="160" stroke-opacity="0.6"></line>
+<line x1="216" y1="108" x2="214" y2="160" stroke-opacity="0.6"></line>
+<line x1="20" y1="205" x2="590" y2="205" stroke-opacity="0.25" stroke-dasharray="4 8"></line>
+</svg>
+<div class="scanline" aria-hidden="true" style="position: absolute; top: 0; bottom: 0; width: 3%; background: linear-gradient(90deg, transparent, rgba(67,198,242,0.55), transparent); box-shadow: 0 0 40px rgba(67,198,242,0.6);"></div>
+<sc-for list="{{ spots }}" as="s" hint-placeholder-count="4">
+<button type="button" class="spot" onClick="{{ s.pick }}" aria-label="{{ s.name }}" aria-pressed="{{ s.pressed }}" style="position: absolute; left: {{ s.x }}; top: {{ s.y }}; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; border: 0; background: transparent; padding: 0; display: grid; place-items: center;">
+<span class="ping" aria-hidden="true" style="position: absolute; width: 22px; height: 22px; border-radius: 50%; background: {{ s.color }};"></span>
+<span aria-hidden="true" style="position: relative; width: 16px; height: 16px; border-radius: 50%; background: {{ s.color }}; box-shadow: 0 0 0 {{ s.ring }} rgba(255,255,255,0.9);"></span>
+</button>
+</sc-for>
+</div>
+<p style="margin: 8px 0 0; font-size: 13px; color: #93AEBF;">اضغط على نقطة الضرر لعرض التقدير</p>
+</div>
+
+<div style="border-radius: 24px; border: 1px solid rgba(130,190,225,0.18); background: #0B1A24; padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+<span class="m" style="font-size: 12px; color: #93AEBF; letter-spacing: 1px;">ESTIMATE · عرض سعر مبدئي</span>
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 18px; border-radius: 16px; background: rgba(255,178,63,0.08); border: 1px solid rgba(255,178,63,0.35);">
+<span style="font-size: 13px; color: #FFCF85;">{{ active.sev }}</span>
+<strong class="k" style="font-size: 26px; font-weight: 800;">{{ active.name }}</strong>
+<span style="color: #C2D6E2;">الإجراء المقترح: <strong style="color: #EAF3F8;">{{ active.action }}</strong></span>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px;">
+<sc-for list="{{ spots }}" as="s" hint-placeholder-count="4">
+<li style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-radius: 10px; background: {{ s.rowBg }}; font-size: 15px;"><span style="display: flex; align-items: center; gap: 10px;"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: {{ s.color }};"></span>{{ s.name }}</span><span class="m" style="color: #93AEBF; font-size: 13px;">[000] SAR</span></li>
+</sc-for>
+</ul>
+<div style="margin-top: auto; display: flex; gap: 10px; flex-wrap: wrap;">
+<a href="#quote" class="btn" style="flex: 1 1 160px; min-height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #FFB23F; color: #1A1206; text-decoration: none; font-weight: 800;">إصدار عرض السعر</a>
+<a href="#parts" style="flex: 1 1 140px; min-height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid rgba(130,190,225,0.3); color: #EAF3F8; text-decoration: none; font-weight: 600;">طلب القطع</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-label="المستندات والتكاملات" style="border-top: 1px solid rgba(130,190,225,0.12); border-bottom: 1px solid rgba(130,190,225,0.12); padding: 22px 0; overflow: hidden; background: #071219;">
+<div class="marquee" style="display: flex; gap: 48px; width: max-content; white-space: nowrap; font-size: 20px; font-weight: 600; color: #6F8D9F;">
+<span class="k">فاتورة ضريبية</span><span style="color: #43C6F2;">✦</span><span class="k">عرض سعر</span><span style="color: #43C6F2;">✦</span><span class="k">وثيقة دخول وخروج المركبة</span><span style="color: #43C6F2;">✦</span><span class="k">استمارة المخالصة النهائية</span><span style="color: #43C6F2;">✦</span><span class="k">استمارة طلب إصلاح</span><span style="color: #43C6F2;">✦</span><span class="m">ORACLE</span><span style="color: #43C6F2;">✦</span><span class="m">SAP</span><span style="color: #43C6F2;">✦</span><span class="m">ODOO</span><span style="color: #43C6F2;">✦</span><span class="k">هيئة الزكاة والضريبة والجمارك</span><span style="color: #43C6F2;">✦</span><span class="k">مركز سلامة المركبات</span><span style="color: #43C6F2;">✦</span>
+<span class="k" aria-hidden="true">فاتورة ضريبية</span><span style="color: #43C6F2;" aria-hidden="true">✦</span><span class="k" aria-hidden="true">عرض سعر</span><span style="color: #43C6F2;" aria-hidden="true">✦</span><span class="k" aria-hidden="true">وثيقة دخول وخروج المركبة</span><span style="color: #43C6F2;" aria-hidden="true">✦</span><span class="k" aria-hidden="true">استمارة المخالصة النهائية</span><span style="color: #43C6F2;" aria-hidden="true">✦</span><span class="k" aria-hidden="true">استمارة طلب إصلاح</span><span style="color: #43C6F2;" aria-hidden="true">✦</span><span class="m" aria-hidden="true">ORACLE</span><span style="color: #43C6F2;" aria-hidden="true">✦</span><span class="m" aria-hidden="true">SAP</span><span style="color: #43C6F2;" aria-hidden="true">✦</span><span class="m" aria-hidden="true">ODOO</span><span style="color: #43C6F2;" aria-hidden="true">✦</span><span class="k" aria-hidden="true">هيئة الزكاة والضريبة والجمارك</span><span style="color: #43C6F2;" aria-hidden="true">✦</span><span class="k" aria-hidden="true">مركز سلامة المركبات</span><span style="color: #43C6F2;" aria-hidden="true">✦</span>
+</div>
+</section>
+
+<section id="c-lane" aria-labelledby="c-lane-h" style="padding: 120px 0; position: relative;">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 56px;">
+<div class="rv" style="display: flex; flex-direction: column; gap: 12px;">
+<span class="m" style="font-size: 13px; letter-spacing: 2px; color: #43C6F2;">01 — PIT LANE</span>
+<h2 id="c-lane-h" class="k" style="margin: 0; font-size: 56px; line-height: 1.2; font-weight: 900;">رحلة المركبة في ورشتك</h2>
+</div>
+<div class="rv" style="position: relative;">
+<div class="lane-track" aria-hidden="true" style="position: absolute; top: 27px; right: 0; left: 0; height: 2px; background: repeating-linear-gradient(90deg, rgba(130,190,225,0.35) 0 14px, transparent 14px 26px);"></div>
+<div class="car lane-track" aria-hidden="true" style="position: absolute; top: 4px; width: 56px; height: 44px; display: grid; place-items: center; z-index: 2;">
+<svg width="52" height="28" viewBox="0 0 52 28" fill="#FFB23F"><path d="M4 20 L8 12 Q10 10 14 10 L20 10 L26 4 Q28 3 31 3 L40 3 Q43 3 45 6 L48 12 Q50 13 50 16 L50 20 Z"></path><circle cx="14" cy="21" r="5" fill="#050D13" stroke="#FFB23F" stroke-width="2"></circle><circle cx="40" cy="21" r="5" fill="#050D13" stroke="#FFB23F" stroke-width="2"></circle></svg>
+</div>
+<ol class="lane" style="list-style: none; margin: 0; padding: 0; position: relative; z-index: 1;">
+<li style="display: flex; flex-direction: column; gap: 14px; padding-left: 16px;"><span class="st m" style="width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; font-weight: 600; font-size: 18px; border: 1px solid; animation-delay: 0s;">01</span><strong class="k" style="font-size: 20px;">الاستقبال</strong><span style="color: #93AEBF; font-size: 15px;">وثيقة دخول رقمية وبيانات العميل والمركبة.</span></li>
+<li style="display: flex; flex-direction: column; gap: 14px; padding-left: 16px;"><span class="st m" style="width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; font-weight: 600; font-size: 18px; border: 1px solid; animation-delay: 2.1s;">02</span><strong class="k" style="font-size: 20px;">الفحص والتسعير</strong><span style="color: #93AEBF; font-size: 15px;">تحليل الضرر بالذكاء الاصطناعي وعرض سعر فوري.</span></li>
+<li style="display: flex; flex-direction: column; gap: 14px; padding-left: 16px;"><span class="st m" style="width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; font-weight: 600; font-size: 18px; border: 1px solid; animation-delay: 4.2s;">03</span><strong class="k" style="font-size: 20px;">القطع</strong><span style="color: #93AEBF; font-size: 15px;">طلب مباشر من الموردين ومتابعة المخزون.</span></li>
+<li style="display: flex; flex-direction: column; gap: 14px; padding-left: 16px;"><span class="st m" style="width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; font-weight: 600; font-size: 18px; border: 1px solid; animation-delay: 6.3s;">04</span><strong class="k" style="font-size: 20px;">الإصلاح</strong><span style="color: #93AEBF; font-size: 15px;">مهام الفنيين وتحديث الحالة لحظياً للعميل.</span></li>
+<li style="display: flex; flex-direction: column; gap: 14px;"><span class="st m" style="width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; font-weight: 600; font-size: 18px; border: 1px solid; animation-delay: 8.4s;">05</span><strong class="k" style="font-size: 20px;">التسليم</strong><span style="color: #93AEBF; font-size: 15px;">فاتورة ضريبية معتمدة ومخالصة نهائية.</span></li>
+</ol>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="c-orbit-h" style="padding: 40px 0 120px;">
+<div class="wrap orbit-grid">
+<div class="rv" style="display: flex; flex-direction: column; gap: 18px;">
+<span class="m" style="font-size: 13px; letter-spacing: 2px; color: #43C6F2;">02 — ECOSYSTEM</span>
+<h2 id="c-orbit-h" class="k" style="margin: 0; font-size: 56px; line-height: 1.2; font-weight: 900;">ورشتك في المركز.<br><span style="color: #6F8D9F;">والكل يدور حولها.</span></h2>
+<p style="margin: 0; color: #A9C1D0; font-size: 18px; max-width: 30em;">مالك المركبة يتابع، المورّد يسعّر، شركة التأمين توجّه المطالبة — وكل ذلك يصل لوحة ورشتك مباشرة.</p>
+<ul style="list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+<li style="padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(130,190,225,0.18); background: #0B1A24;"><strong>ملاك مراكز الصيانة</strong></li>
+<li style="padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(130,190,225,0.18); background: #0B1A24;"><strong>مالك المركبة</strong></li>
+<li style="padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(130,190,225,0.18); background: #0B1A24;"><strong>موردو قطع الغيار</strong></li>
+<li style="padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(130,190,225,0.18); background: #0B1A24;"><strong>شركات تأمين المركبات</strong></li>
+</ul>
+</div>
+<div role="img" aria-label="ورشة دايركت في المركز يحيط بها مالك المركبة والموردون وشركات التأمين والجهات الرسمية" style="position: relative; width: 100%; max-width: 520px; aspect-ratio: 1 / 1; justify-self: center;">
+<div aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(130,190,225,0.18);"></div>
+<div aria-hidden="true" style="position: absolute; inset: 18%; border-radius: 50%; border: 1px dashed rgba(67,198,242,0.35);"></div>
+<div aria-hidden="true" style="position: absolute; inset: 34%; border-radius: 50%; background: radial-gradient(circle, #43C6F2 0%, #1C6F96 55%, #0B2E44 100%); box-shadow: 0 0 80px rgba(67,198,242,0.55); display: grid; place-items: center;"><strong class="k" style="color: #04121A; font-size: 18px; font-weight: 900; text-align: center; line-height: 1.3;">ورشة<br>دايركت</strong></div>
+<div class="ring" aria-hidden="true" style="position: absolute; inset: 0;">
+<div style="position: absolute; top: -6%; left: 50%; margin-left: -60px; width: 120px;"><div class="node" style="padding: 10px 12px; border-radius: 14px; background: #0B1A24; border: 1px solid #43C6F2; text-align: center; font-size: 14px; font-weight: 600;">مالك المركبة</div></div>
+<div style="position: absolute; top: 50%; right: -10%; margin-top: -22px; width: 130px;"><div class="node" style="padding: 10px 12px; border-radius: 14px; background: #0B1A24; border: 1px solid #FFB23F; text-align: center; font-size: 14px; font-weight: 600;">موردو القطع</div></div>
+<div style="position: absolute; bottom: -6%; left: 50%; margin-left: -66px; width: 132px;"><div class="node" style="padding: 10px 12px; border-radius: 14px; background: #0B1A24; border: 1px solid #4ADE9B; text-align: center; font-size: 14px; font-weight: 600;">شركات التأمين</div></div>
+<div style="position: absolute; top: 50%; left: -10%; margin-top: -22px; width: 130px;"><div class="node" style="padding: 10px 12px; border-radius: 14px; background: #0B1A24; border: 1px solid #8B93E8; text-align: center; font-size: 14px; font-weight: 600;">الجهات الرسمية</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="c-bento" aria-labelledby="c-bento-h" style="padding: 0 0 120px;">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px;">
+<div class="rv" style="display: flex; flex-direction: column; gap: 12px;">
+<span class="m" style="font-size: 13px; letter-spacing: 2px; color: #43C6F2;">03 — CONTROL ROOM</span>
+<h2 id="c-bento-h" class="k" style="margin: 0; font-size: 56px; line-height: 1.2; font-weight: 900;">غرفة تحكم ورشتك</h2>
+</div>
+<div class="bento">
+<article class="rv b4" style="border-radius: 24px; border: 1px solid rgba(130,190,225,0.18); background: #0B1A24; padding: 28px; display: flex; flex-direction: column; gap: 16px; min-height: 280px;">
+<h3 class="k" style="margin: 0; font-size: 24px; font-weight: 800;">إدارة الطلبات والموردين</h3>
+<p style="margin: 0; color: #A9C1D0; max-width: 34em;">تحكّم شامل من الطلب حتى التسليم، مع طلبات القطع والتواصل مع الموردين من لوحة واحدة.</p>
+<div aria-hidden="true" style="display: flex; flex-direction: column; gap: 10px; margin-top: auto;">
+<div style="display: flex; align-items: center; gap: 14px;"><span class="m" style="width: 110px; font-size: 13px; color: #93AEBF;">#WO-0142</span><div style="flex: 1; height: 10px; border-radius: 99px; background: rgba(130,190,225,0.12); overflow: hidden;"><div class="fillbar" style="--w: 82%; height: 100%; background: #43C6F2; border-radius: 99px;"></div></div></div>
+<div style="display: flex; align-items: center; gap: 14px;"><span class="m" style="width: 110px; font-size: 13px; color: #93AEBF;">#WO-0143</span><div style="flex: 1; height: 10px; border-radius: 99px; background: rgba(130,190,225,0.12); overflow: hidden;"><div class="fillbar" style="--w: 46%; height: 100%; background: #FFB23F; border-radius: 99px; animation-delay: .3s;"></div></div></div>
+<div style="display: flex; align-items: center; gap: 14px;"><span class="m" style="width: 110px; font-size: 13px; color: #93AEBF;">#WO-0144</span><div style="flex: 1; height: 10px; border-radius: 99px; background: rgba(130,190,225,0.12); overflow: hidden;"><div class="fillbar" style="--w: 100%; height: 100%; background: #4ADE9B; border-radius: 99px; animation-delay: .6s;"></div></div></div>
+</div>
+</article>
+<article class="rv b2" style="border-radius: 24px; border: 1px solid rgba(130,190,225,0.18); background: #0B1A24; padding: 28px; display: flex; flex-direction: column; gap: 14px; position: relative; overflow: hidden;">
+<h3 class="k" style="margin: 0; font-size: 22px; font-weight: 800;">فواتير معتمدة</h3>
+<p style="margin: 0; color: #A9C1D0; font-size: 15px;">مبيعات، مشتريات ومخزون — بفواتير متوافقة مع اللوائح.</p>
+<div aria-hidden="true" style="margin-top: auto; position: relative; height: 130px; border-radius: 12px; background: #EAF3F8; padding: 14px; display: flex; flex-direction: column; gap: 7px;">
+<div style="height: 8px; width: 45%; background: #9CB4C3; border-radius: 4px;"></div><div style="height: 6px; background: #C9D8E2; border-radius: 4px;"></div><div style="height: 6px; width: 70%; background: #C9D8E2; border-radius: 4px;"></div><div style="height: 6px; width: 55%; background: #C9D8E2; border-radius: 4px;"></div>
+<div class="stamp k" style="position: absolute; left: 16px; bottom: 14px; padding: 6px 12px; border: 3px solid #17643F; color: #17643F; border-radius: 8px; font-weight: 900; font-size: 15px;">معتمدة ✓</div>
+</div>
+</article>
+<article class="rv b2" style="border-radius: 24px; border: 1px solid rgba(130,190,225,0.18); background: #0B1A24; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+<h3 class="k" style="margin: 0; font-size: 22px; font-weight: 800;">حالة لحظية للعميل</h3>
+<p style="margin: 0; color: #A9C1D0; font-size: 15px;">العميل يحجز موعده ويتابع طلبه ذاتياً.</p>
+<div aria-hidden="true" style="margin-top: auto; position: relative; height: 52px;">
+<span class="cyc" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: rgba(67,198,242,0.14); color: #9FE3FA; font-weight: 700;">قيد الإصلاح</span>
+<span class="cyc" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: rgba(255,178,63,0.14); color: #FFCF85; font-weight: 700; animation-delay: 2s;">بانتظار القطع</span>
+<span class="cyc" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: rgba(74,222,155,0.14); color: #8EF0C0; font-weight: 700; animation-delay: 4s;">جاهزة للتسليم ✓</span>
+</div>
+</article>
+<article class="rv b2" style="border-radius: 24px; border: 1px solid rgba(130,190,225,0.18); background: #0B1A24; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+<h3 class="k" style="margin: 0; font-size: 22px; font-weight: 800;">تقارير وتكامل محاسبي</h3>
+<p style="margin: 0; color: #A9C1D0; font-size: 15px;">Oracle وSAP وOdoo، من أي جهاز.</p>
+<div aria-hidden="true" style="margin-top: auto; display: flex; align-items: flex-end; gap: 8px; height: 90px;">
+<div class="bar" style="flex: 1; height: 40%; background: rgba(67,198,242,0.35); border-radius: 6px 6px 0 0;"></div><div class="bar" style="flex: 1; height: 62%; background: rgba(67,198,242,0.35); border-radius: 6px 6px 0 0; animation-delay: .1s;"></div><div class="bar" style="flex: 1; height: 50%; background: rgba(67,198,242,0.35); border-radius: 6px 6px 0 0; animation-delay: .2s;"></div><div class="bar" style="flex: 1; height: 78%; background: rgba(67,198,242,0.35); border-radius: 6px 6px 0 0; animation-delay: .3s;"></div><div class="bar" style="flex: 1; height: 100%; background: #43C6F2; border-radius: 6px 6px 0 0; animation-delay: .4s;"></div>
+</div>
+</article>
+<article class="rv b2" style="border-radius: 24px; border: 1px solid rgba(130,190,225,0.18); background: #0B1A24; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+<h3 class="k" style="margin: 0; font-size: 22px; font-weight: 800;">موظفون، صلاحيات، فروع</h3>
+<p style="margin: 0; color: #A9C1D0; font-size: 15px;">كل دور يرى ما يخصه، وكل فرع تحت السيطرة.</p>
+<div aria-hidden="true" style="margin-top: auto; display: flex;">
+<span style="width: 44px; height: 44px; border-radius: 50%; background: #43C6F2; color: #04121A; display: grid; place-items: center; font-weight: 800; border: 3px solid #0B1A24;">م</span>
+<span style="width: 44px; height: 44px; border-radius: 50%; background: #FFB23F; color: #1A1206; display: grid; place-items: center; font-weight: 800; border: 3px solid #0B1A24; margin-right: -12px;">ف</span>
+<span style="width: 44px; height: 44px; border-radius: 50%; background: #4ADE9B; color: #04121A; display: grid; place-items: center; font-weight: 800; border: 3px solid #0B1A24; margin-right: -12px;">ح</span>
+<span class="m" style="width: 44px; height: 44px; border-radius: 50%; background: #1A2C38; color: #C2D6E2; display: grid; place-items: center; font-size: 13px; border: 3px solid #0B1A24; margin-right: -12px;">+</span>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<section id="c-price" aria-labelledby="c-price-h" style="padding: 0 0 120px;">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px;">
+<div class="rv" style="display: flex; flex-direction: column; gap: 12px;">
+<span class="m" style="font-size: 13px; letter-spacing: 2px; color: #43C6F2;">04 — PLANS · SAR / YEAR</span>
+<h2 id="c-price-h" class="k" style="margin: 0; font-size: 56px; line-height: 1.2; font-weight: 900;">اختر سرعتك</h2>
+</div>
+<div class="price">
+<sc-for list="{{ plans }}" as="p" hint-placeholder-count="4">
+<div style="border-radius: 24px; padding: 2px; background: {{ p.frame }};" class="{{ p.cls }}">
+<button type="button" onClick="{{ p.pick }}" aria-pressed="{{ p.pressed }}" style="width: 100%; height: 100%; text-align: right; border: 0; border-radius: 22px; background: {{ p.bg }}; color: #EAF3F8; padding: 26px; display: flex; flex-direction: column; gap: 14px; font: inherit; cursor: pointer;">
+<span style="display: flex; justify-content: space-between; align-items: center; width: 100%;"><strong class="k" style="font-size: 20px; font-weight: 800;">{{ p.name }}</strong><span style="font-size: 12px; font-weight: 700; color: #04121A; background: #FFB23F; padding: 3px 10px; border-radius: 99px; opacity: {{ p.badge }};">الأكثر طلباً</span></span>
+<span style="color: #93AEBF; font-size: 14px;">{{ p.tag }}</span>
+<span class="m" style="font-size: 44px; font-weight: 600; line-height: 1; color: {{ p.priceColor }};">{{ p.price }}</span>
+<span style="display: flex; flex-direction: column; gap: 8px; font-size: 15px; color: #C2D6E2;">
+<sc-for list="{{ p.feats }}" as="f" hint-placeholder-count="3"><span>— {{ f }}</span></sc-for>
+</span>
+</button>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="c-cta-h" style="padding: 40px 0 120px; position: relative;">
+<div class="wrap" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px;">
+<h2 id="c-cta-h" class="k giant par" style="margin: 0; font-size: 150px; line-height: 1; font-weight: 900; color: transparent; -webkit-text-stroke: 2px rgba(130,190,225,0.5);">ابدأ الآن</h2>
+<p style="margin: 0; font-size: 20px; color: #A9C1D0; max-width: 30em;">الباقة المجانية جاهزة — حتى ٥ مستخدمين، بدون التزام.</p>
+<a href="#signup" class="btn" style="min-height: 60px; display: inline-flex; align-items: center; padding: 0 36px; border-radius: 14px; background: #43C6F2; color: #04121A; text-decoration: none; font-weight: 800; font-size: 19px;">ابدأ تجربتك المجانية</a>
+<p style="margin: 0; color: #93AEBF;">الرقم الموحد <a href="tel:920010431" class="m" style="font-weight: 600;">920010431</a> · <a href="mailto:support@warshadirect.com">support@warshadirect.com</a></p>
+</div>
+</section>
+</main>
+
+<footer style="border-top: 1px solid rgba(130,190,225,0.12); padding: 28px 0; color: #93AEBF; font-size: 14px;">
+<div class="wrap" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px;">
+<span class="k" style="color: #EAF3F8; font-weight: 800;">ورشة دايركت</span>
+<nav aria-label="روابط التذييل" style="display: flex; gap: 20px; flex-wrap: wrap;"><a href="#c-bento">عن المنتج</a><a href="#c-price">الباقات</a><a href="#contact">تواصل معنا</a><a href="#privacy">سياسة الخصوصية</a></nav>
+<span>© [السنة] ورشة دايركت</span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6000}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { spot: 0, plan: 2 }; }
+renderVals() {
+const S = [
+{ name: 'الصدام الأمامي', action: 'استبدال', sev: 'ضرر شديد', x: '7%', y: '62%', color: '#FF6B5B' },
+{ name: 'الزجاج الأمامي', action: 'فحص وإصلاح شرخ', sev: 'ضرر متوسط', x: '40%', y: '34%', color: '#FFB23F' },
+{ name: 'الباب الأمامي', action: 'سمكرة ودهان', sev: 'ضرر متوسط', x: '45%', y: '56%', color: '#FFB23F' },
+{ name: 'المصباح الخلفي', action: 'استبدال', sev: 'ضرر بسيط', x: '93%', y: '52%', color: '#43C6F2' }
+];
+const P = [
+{ name: 'المجانية', tag: 'ابدأ من غير التزام', price: '0', feats: ['طلبات الإصلاح', '٥ مستخدمين', 'الفواتير الإلكترونية'] },
+{ name: 'الأساسية', tag: 'مثالية لبداية توسعك', price: '1,200', feats: ['كل مزايا المجانية', 'إضافة فروع', 'حتى ٣ فروع'] },
+{ name: 'الاحترافية', tag: 'الأكثر استخداماً', price: '2,000', feats: ['كل مزايا الأساسية', 'المشتريات والمخزون', 'حجز المواعيد'] },
+{ name: 'المميزة', tag: 'للورش الكبيرة', price: '3,500', feats: ['كل مزايا الاحترافية', 'بوابة الخدمة الذاتية', 'الربط مع الموردين'] }
+];
+const cs = this.state.spot, cp = this.state.plan;
+const spots = S.map((s, i) => ({ ...s, pressed: i === cs ? 'true' : 'false', ring: i === cs ? '4px' : '0px', rowBg: i === cs ? 'rgba(255,178,63,0.10)' : 'rgba(130,190,225,0.06)', pick: () => this.setState({ spot: i }) }));
+const plans = P.map((p, i) => ({ ...p, pressed: i === cp ? 'true' : 'false', cls: i === cp ? 'feat-border' : '', frame: i === cp ? 'conic-gradient(from var(--a), #43C6F2, #2B3891, #FFB23F, #43C6F2)' :'rgba(130,190,225,0.18)', bg: i === cp ? '#0E2230' : '#0B1A24', priceColor: i === cp ? '#43C6F2' : '#EAF3F8', badge: i === 2 ? '1' : '0', pick: () => this.setState({ plan: i }) }));
+return { spots, active: S[cs], plans };
+}
+}
+</script>
+</body>
+</html>

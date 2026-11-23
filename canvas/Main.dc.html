@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>ورشة دايركت — الصفحة الرئيسية</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F5F8FA}
+a{color:#1D5A7E}a:hover{color:#0B3A52}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px;align-items:center}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.g5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.span2{grid-column:span 2}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.btn{transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease;cursor:pointer}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(6,43,61,.18)}
+.card{transition:border-color .2s ease,box-shadow .2s ease}
+.card:hover{border-color:#9CC3DA;box-shadow:0 10px 30px rgba(6,43,61,.08)}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #F5A524;outline-offset:2px}
+summary{cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}
+details[open] .chev{transform:rotate(-90deg)}
+.chev{transition:transform .2s ease}
+@media (max-width:1000px){.g5{grid-template-columns:repeat(3,minmax(0,1fr))}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.g2{grid-template-columns:minmax(0,1fr);gap:40px}.bento{grid-template-columns:minmax(0,1fr)}.span2{grid-column:auto}.nav-links{display:none!important}.h1{font-size:40px!important}}
+@media (max-width:560px){.g4,.g5,.steps{grid-template-columns:minmax(0,1fr)}.hide-sm{display:none!important}.h1{font-size:34px!important}.h2{font-size:28px!important}}
+@media (prefers-reduced-motion:reduce){.btn,.card,.chev{transition:none}.btn:hover{transform:none}}
+</style>
+</helmet>
+<div style="font-family: 'IBM Plex Sans Arabic', 'Somar', system-ui, sans-serif; color: #10222E; background: #F5F8FA; line-height: 1.6; font-size: 16px;">
+
+<a href="#main" style="position: absolute; right: -9999px;">انتقل إلى المحتوى</a>
+
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.94); border-bottom: 1px solid #E1E9EF;">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 72px; flex-wrap: wrap;">
+<a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #004C6D;" aria-label="ورشة دايركت — الرئيسية">
+<svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="9" fill="#004C6D"></rect><path d="M21 9l-8 9 8 9" stroke="#F5A524" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><path d="M27 13l-4 5 4 5" stroke="#9CC3DA" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span style="font-weight: 700; font-size: 20px; letter-spacing: -0.2px;">ورشة دايركت</span>
+</a>
+<nav class="nav-links" aria-label="القائمة الرئيسية" style="display: flex; gap: 32px; font-weight: 500; font-size: 15px;">
+<a href="#features" style="text-decoration: none; color: #2C4352;">المزايا</a>
+<a href="#who" style="text-decoration: none; color: #2C4352;">لمن ورشة دايركت</a>
+<a href="#pricing" style="text-decoration: none; color: #2C4352;">الباقات</a>
+<a href="#faq" style="text-decoration: none; color: #2C4352;">الأسئلة الشائعة</a>
+<a href="#contact" style="text-decoration: none; color: #2C4352;">تواصل معنا</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 12px;">
+<button type="button" class="hide-sm" style="min-height: 44px; min-width: 44px; padding: 0 12px; border: 1px solid #D3DFE7; border-radius: 10px; background: #FFFFFF; color: #10222E; font: inherit; font-weight: 600; font-size: 14px;" aria-label="Switch to English">EN</button>
+<a href="#login" class="hide-sm" style="min-height: 44px; display: inline-flex; align-items: center; padding: 0 14px; text-decoration: none; color: #004C6D; font-weight: 600; font-size: 15px;">تسجيل الدخول</a>
+<a href="#signup" class="btn" style="min-height: 44px; display: inline-flex; align-items: center; padding: 0 18px; border-radius: 10px; background: #004C6D; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px;">ابدأ مجاناً</a>
+</div>
+</div>
+</header>
+
+<main id="main">
+
+<section id="top" style="background: #062B3D; color: #FFFFFF; padding: 80px 0 96px; position: relative; overflow: hidden;">
+<div aria-hidden="true" style="position: absolute; inset: 0; background-image: linear-gradient(rgba(156,195,218,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(156,195,218,0.07) 1px, transparent 1px); background-size: 48px 48px;"></div>
+<div class="wrap g2" style="position: relative;">
+<div style="display: flex; flex-direction: column; gap: 24px;">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: rgba(156,195,218,0.14); border: 1px solid rgba(156,195,218,0.3); color: #CFE3EF; font-size: 14px; font-weight: 500;">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5A524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7z"></path><path d="M9 12l2 2 4-4"></path></svg>
+منصة سحابية معتمدة لمراكز صيانة المركبات
+</span>
+<h1 class="h1" style="margin: 0; font-size: 56px; line-height: 1.2; font-weight: 700; letter-spacing: -0.5px;">نظام متكامل لإدارة مراكز الصيانة، <span style="color: {{accent}};">من الاستقبال حتى التسليم</span></h1>
+<p style="margin: 0; font-size: 19px; color: #C3D6E2; max-width: 34em;">اعمل بكفاءة، حسّن تجربة عملائك، وحقق الامتثال الكامل للجهات الرسمية وشركات تأمين المركبات — من منصة واحدة تعمل على الجوال واللوحي والحاسوب.</p>
+<div style="display: flex; gap: 12px; flex-wrap: wrap;">
+<a href="#signup" class="btn" style="min-height: 52px; display: inline-flex; align-items: center; gap: 10px; padding: 0 26px; border-radius: 12px; background: {{accent}}; color: #10222E; text-decoration: none; font-weight: 700; font-size: 17px;">ابدأ تجربتك المجانية
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>
+</a>
+<a href="#features" class="btn" style="min-height: 52px; display: inline-flex; align-items: center; padding: 0 22px; border-radius: 12px; border: 1px solid rgba(207,227,239,0.4); color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 17px;">استكشف المزايا</a>
+</div>
+<p style="margin: 0; font-size: 14px; color: #9FBACB;">الباقة المجانية متاحة دائماً — حتى ٥ مستخدمين.</p>
+<ul style="list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 14px; color: #CFE3EF;">
+<li style="display: flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7FD1A8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>فواتير إلكترونية معتمدة</li>
+<li style="display: flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7FD1A8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>تكامل مع Oracle وSAP وOdoo</li>
+<li style="display: flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7FD1A8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>تحليل الأضرار بالذكاء الاصطناعي</li>
+</ul>
+</div>
+
+<div aria-label="معاينة لوحة طلبات الإصلاح" role="img" style="background: #FFFFFF; color: #10222E; border-radius: 18px; box-shadow: 0 30px 80px rgba(0,0,0,0.35); overflow: hidden; border: 1px solid rgba(255,255,255,0.2);">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid #E8EEF2; background: #F7FAFC;">
+<strong style="font-size: 15px;">طلبات الإصلاح اليوم</strong>
+<span style="font-size: 12px; color: #4A6070; background: #EAF2F7; padding: 4px 10px; border-radius: 999px;">الفرع الرئيسي</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 16px 18px;">
+<div style="border: 1px solid #E8EEF2; border-radius: 12px; padding: 12px;"><div style="font-size: 12px; color: #4A6070;">قيد الإصلاح</div><div style="font-size: 24px; font-weight: 700; color: #004C6D;">[00]</div></div>
+<div style="border: 1px solid #E8EEF2; border-radius: 12px; padding: 12px;"><div style="font-size: 12px; color: #4A6070;">بانتظار القطع</div><div style="font-size: 24px; font-weight: 700; color: #A3610B;">[00]</div></div>
+<div style="border: 1px solid #E8EEF2; border-radius: 12px; padding: 12px;"><div style="font-size: 12px; color: #4A6070;">جاهزة للتسليم</div><div style="font-size: 24px; font-weight: 700; color: #1E7A4E;">[00]</div></div>
+</div>
+<div style="padding: 0 18px 18px; display: flex; flex-direction: column; gap: 8px;">
+<div style="display: grid; grid-template-columns: 1.1fr 1.2fr 1fr; gap: 8px; font-size: 12px; color: #4A6070; padding: 0 12px;"><span>رقم اللوحة</span><span>المركبة</span><span>الحالة</span></div>
+<div style="display: grid; grid-template-columns: 1.1fr 1.2fr 1fr; gap: 8px; align-items: center; font-size: 14px; padding: 10px 12px; border-radius: 10px; background: #F7FAFC;"><span style="font-weight: 600;">أ ب ج ١٢٣٤</span><span>تويوتا كامري</span><span style="justify-self: start; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: #E3F0F8; color: #0B4C70;">قيد الإصلاح</span></div>
+<div style="display: grid; grid-template-columns: 1.1fr 1.2fr 1fr; gap: 8px; align-items: center; font-size: 14px; padding: 10px 12px; border-radius: 10px;"><span style="font-weight: 600;">د ر س ٥٦٧٨</span><span>هيونداي سوناتا</span><span style="justify-self: start; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: #FDF1DD; color: #8A4F06;">بانتظار القطع</span></div>
+<div style="display: grid; grid-template-columns: 1.1fr 1.2fr 1fr; gap: 8px; align-items: center; font-size: 14px; padding: 10px 12px; border-radius: 10px; background: #F7FAFC;"><span style="font-weight: 600;">ط ل م ٩٠١٢</span><span>نيسان باترول</span><span style="justify-self: start; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: #E2F4EA; color: #17643F;">جاهزة للتسليم</span></div>
+<div style="display: flex; gap: 8px; margin-top: 6px;">
+<span style="flex: 1; display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 10px 12px; border: 1px dashed #C9D8E2; border-radius: 10px; color: #2C4352;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1D5A7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><path d="M14 3v6h6"></path></svg>فاتورة ضريبية صادرة</span>
+<span style="flex: 1; display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 10px 12px; border: 1px dashed #C9D8E2; border-radius: 10px; color: #2C4352;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1D5A7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path></svg>موعد استلام ١١:٣٠</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-label="الاعتمادات" style="background: #FFFFFF; border-bottom: 1px solid #E1E9EF;">
+<div class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; padding-top: 28px; padding-bottom: 28px;">
+<p style="margin: 0; font-weight: 600; color: #2C4352; font-size: 15px;">ثقة الجهات الرسمية مدمجة في كل فاتورة وكل نموذج</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px;">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border: 1px solid #E1E9EF; border-radius: 12px;"><span style="font-size: 13px; color: #4A6070;">فواتيرك معتمدة من</span><strong style="font-size: 14px;">[شعار] هيئة الزكاة والضريبة والجمارك</strong></div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border: 1px solid #E1E9EF; border-radius: 12px;"><span style="font-size: 13px; color: #4A6070;">متوافق مع معايير</span><strong style="font-size: 14px;">[شعار] مركز سلامة المركبات</strong></div>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="docs-h" style="padding: 88px 0;">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px;">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 680px;">
+<span style="color: #1D5A7E; font-weight: 600; font-size: 15px;">نماذج جاهزة ومعتمدة</span>
+<h2 id="docs-h" class="h2" style="margin: 0; font-size: 38px; line-height: 1.3; color: #004C6D;">كل مستند تحتاجه الورشة والجهات الرسمية، يصدر بضغطة</h2>
+</div>
+<div class="g5">
+<div class="card" style="background: #FFFFFF; border: 1px solid #E1E9EF; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 14px;">
+<div aria-hidden="true" style="height: 96px; border-radius: 10px; background: #F2F7FA; padding: 12px; display: flex; flex-direction: column; gap: 6px;"><div style="height: 8px; width: 50%; background: #9CC3DA; border-radius: 4px;"></div><div style="height: 6px; background: #D7E5EE; border-radius: 4px;"></div><div style="height: 6px; width: 80%; background: #D7E5EE; border-radius: 4px;"></div><div style="height: 6px; width: 65%; background: #D7E5EE; border-radius: 4px;"></div></div>
+<strong style="font-size: 16px;">عرض السعر</strong>
+</div>
+<div class="card" style="background: #FFFFFF; border: 1px solid #E1E9EF; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 14px;">
+<div aria-hidden="true" style="height: 96px; border-radius: 10px; background: #F2F7FA; padding: 12px; display: flex; flex-direction: column; gap: 6px;"><div style="display: flex; justify-content: space-between;"><div style="height: 8px; width: 45%; background: #9CC3DA; border-radius: 4px;"></div><div style="height: 22px; width: 22px; border: 2px solid #1D5A7E; border-radius: 3px;"></div></div><div style="height: 6px; background: #D7E5EE; border-radius: 4px;"></div><div style="height: 6px; width: 70%; background: #D7E5EE; border-radius: 4px;"></div></div>
+<strong style="font-size: 16px;">فاتورة ضريبية</strong>
+</div>
+<div class="card" style="background: #FFFFFF; border: 1px solid #E1E9EF; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 14px;">
+<div aria-hidden="true" style="height: 96px; border-radius: 10px; background: #F2F7FA; padding: 12px; display: flex; flex-direction: column; gap: 6px;"><div style="height: 8px; width: 60%; background: #9CC3DA; border-radius: 4px;"></div><div style="display: flex; gap: 6px;"><div style="flex: 1; height: 30px; background: #D7E5EE; border-radius: 4px;"></div><div style="flex: 1; height: 30px; background: #D7E5EE; border-radius: 4px;"></div></div><div style="height: 6px; width: 55%; background: #D7E5EE; border-radius: 4px;"></div></div>
+<strong style="font-size: 16px;">وثيقة دخول وخروج المركبة</strong>
+</div>
+<div class="card" style="background: #FFFFFF; border: 1px solid #E1E9EF; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 14px;">
+<div aria-hidden="true" style="height: 96px; border-radius: 10px; background: #F2F7FA; padding: 12px; display: flex; flex-direction: column; gap: 6px;"><div style="height: 8px; width: 55%; background: #9CC3DA; border-radius: 4px;"></div><div style="height: 6px; background: #D7E5EE; border-radius: 4px;"></div><div style="height: 6px; width: 75%; background: #D7E5EE; border-radius: 4px;"></div><div style="height: 14px; width: 40%; margin-top: auto; border-bottom: 2px solid #1D5A7E;"></div></div>
+<strong style="font-size: 16px;">استمارة المخالصة النهائية</strong>
+</div>
+<div class="card" style="background: #FFFFFF; border: 1px solid #E1E9EF; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 14px;">
+<div aria-hidden="true" style="height: 96px; border-radius: 10px; background: #F2F7FA; padding: 12px; display: flex; flex-direction: column; gap: 6px;"><div style="height: 8px; width: 50%; background: #9CC3DA; border-radius: 4px;"></div><div style="display: flex; gap: 6px; align-items: center;"><div style="height: 10px; width: 10px; border: 2px solid #1D5A7E; border-radius: 2px;"></div><div style="flex: 1; height: 6px; background: #D7E5EE; border-radius: 4px;"></div></div><div style="display: flex; gap: 6px; align-items: center;"><div style="height: 10px; width: 10px; border: 2px solid #1D5A7E; border-radius: 2px;"></div><div style="flex: 1; height: 6px; background: #D7E5EE; border-radius: 4px;"></div></div></div>
+<strong style="font-size: 16px;">استمارة طلب إصلاح</strong>
+</div>
+</div>
+</div>
+</section>
+
+<section id="who" aria-labelledby="who-h" style="padding: 88px 0; background: #FFFFFF;">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px;">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 680px;">
+<span style="color: #1D5A7E; font-weight: 600; font-size: 15px;">منظومة واحدة، أربعة أطراف</span>
+<h2 id="who-h" class="h2" style="margin: 0; font-size: 38px; line-height: 1.3; color: #004C6D;">من يستفيد من ورشة دايركت؟</h2>
+<p style="margin: 0; color: #3D5363; font-size: 17px;">الورشة في المركز، ويتصل بها مالك المركبة والمورّد وشركة التأمين على نفس المنصة — بدون مكالمات ولا أوراق متنقلة.</p>
+</div>
+<div class="g4">
+<article class="card" style="border: 1px solid #E1E9EF; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 14px; background: #F7FAFC;">
+<span style="width: 48px; height: 48px; border-radius: 12px; background: #004C6D; display: grid; place-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"></path></svg></span>
+<h3 style="margin: 0; font-size: 19px;">ملاك مراكز الصيانة</h3>
+<p style="margin: 0; color: #3D5363; font-size: 15px;">أدر الطلبات والفروع والموظفين والمخزون من لوحة واحدة، وتابع الأداء بتقارير دقيقة.</p>
+</article>
+<article class="card" style="border: 1px solid #E1E9EF; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 14px; background: #F7FAFC;">
+<span style="width: 48px; height: 48px; border-radius: 12px; background: #E3F0F8; display: grid; place-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#004C6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M6 17l1.5-5h9L18 17"></path><circle cx="8" cy="17" r="2"></circle><circle cx="16" cy="17" r="2"></circle></svg></span>
+<h3 style="margin: 0; font-size: 19px;">مالك المركبة</h3>
+<p style="margin: 0; color: #3D5363; font-size: 15px;">يحجز موعده ويتابع حالة الإصلاح ذاتياً، ويستلم فاتورة معتمدة عند التسليم.</p>
+</article>
+<article class="card" style="border: 1px solid #E1E9EF; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 14px; background: #F7FAFC;">
+<span style="width: 48px; height: 48px; border-radius: 12px; background: #E3F0F8; display: grid; place-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#004C6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"></path><path d="M3 8v8l9 5 9-5V8"></path><path d="M12 13v8"></path></svg></span>
+<h3 style="margin: 0; font-size: 19px;">موردو قطع الغيار</h3>
+<p style="margin: 0; color: #3D5363; font-size: 15px;">يستقبلون طلبات القطع من الورش مباشرة، ويسعّرونها ويوردونها بشكل مؤتمت.</p>
+</article>
+<article class="card" style="border: 1px solid #E1E9EF; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 14px; background: #F7FAFC;">
+<span style="width: 48px; height: 48px; border-radius: 12px; background: #E3F0F8; display: grid; place-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#004C6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7z"></path></svg></span>
+<h3 style="margin: 0; font-size: 19px;">شركات تأمين المركبات</h3>
+<p style="margin: 0; color: #3D5363; font-size: 15px;">تدير المطالبات وتوجّهها إلى الورش المعتمدة، مع تقييم إلكتروني للأضرار.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="flow-h" style="padding: 88px 0;">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px;">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 680px;">
+<span style="color: #1D5A7E; font-weight: 600; font-size: 15px;">كيف تعمل</span>
+<h2 id="flow-h" class="h2" style="margin: 0; font-size: 38px; line-height: 1.3; color: #004C6D;">رحلة المركبة في ورشتك، خطوة بخطوة</h2>
+</div>
+<ol class="steps" style="list-style: none; margin: 0; padding: 0;">
+<li style="display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E1E9EF;"><span style="font-size: 14px; font-weight: 700; color: #FFFFFF; background: #004C6D; width: 32px; height: 32px; border-radius: 999px; display: grid; place-items: center;">١</span><strong style="font-size: 17px;">استقبال المركبة</strong><span style="color: #3D5363; font-size: 14px;">وثيقة دخول رقمية وتسجيل بيانات العميل والمركبة.</span></li>
+<li style="display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E1E9EF;"><span style="font-size: 14px; font-weight: 700; color: #FFFFFF; background: #004C6D; width: 32px; height: 32px; border-radius: 999px; display: grid; place-items: center;">٢</span><strong style="font-size: 17px;">تقدير وعرض سعر</strong><span style="color: #3D5363; font-size: 14px;">تحليل الأضرار بالذكاء الاصطناعي وإصدار عرض السعر.</span></li>
+<li style="display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E1E9EF;"><span style="font-size: 14px; font-weight: 700; color: #FFFFFF; background: #004C6D; width: 32px; height: 32px; border-radius: 999px; display: grid; place-items: center;">٣</span><strong style="font-size: 17px;">طلب القطع</strong><span style="color: #3D5363; font-size: 14px;">إرسال الطلب للموردين ومتابعة التوريد والمخزون.</span></li>
+<li style="display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E1E9EF;"><span style="font-size: 14px; font-weight: 700; color: #FFFFFF; background: #004C6D; width: 32px; height: 32px; border-radius: 999px; display: grid; place-items: center;">٤</span><strong style="font-size: 17px;">الإصلاح</strong><span style="color: #3D5363; font-size: 14px;">توزيع المهام على الفنيين وتحديث الحالة لحظياً.</span></li>
+<li style="display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E1E9EF;"><span style="font-size: 14px; font-weight: 700; color: #10222E; background: {{accent}}; width: 32px; height: 32px; border-radius: 999px; display: grid; place-items: center;">٥</span><strong style="font-size: 17px;">الفاتورة والتسليم</strong><span style="color: #3D5363; font-size: 14px;">فاتورة ضريبية معتمدة ومخالصة نهائية للعميل.</span></li>
+</ol>
+</div>
+</section>
+
+<section id="features" aria-labelledby="feat-h" style="padding: 88px 0; background: #FFFFFF;">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px;">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 680px;">
+<span style="color: #1D5A7E; font-weight: 600; font-size: 15px;">المزايا</span>
+<h2 id="feat-h" class="h2" style="margin: 0; font-size: 38px; line-height: 1.3; color: #004C6D;">كل عملياتك التشغيلية في مكان واحد</h2>
+</div>
+<div class="bento">
+<article class="card span2" style="border: 1px solid #E1E9EF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px; background: #F7FAFC;">
+<h3 style="margin: 0; font-size: 22px;">إدارة الطلبات والموردين</h3>
+<p style="margin: 0; color: #3D5363; font-size: 16px; max-width: 36em;">تحكّم شامل في عمليات الإصلاح من الطلب حتى التسليم. نظّم طلبات القطع وتواصل مع الموردين عبر لوحة أداء متكاملة.</p>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 8px;">
+<div style="background: #FFFFFF; border: 1px solid #E1E9EF; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 12px; font-weight: 600; color: #0B4C70;">جديد</span><div style="height: 34px; background: #EAF2F7; border-radius: 8px;"></div><div style="height: 34px; background: #EAF2F7; border-radius: 8px;"></div></div>
+<div style="background: #FFFFFF; border: 1px solid #E1E9EF; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 12px; font-weight: 600; color: #8A4F06;">بانتظار القطع</span><div style="height: 34px; background: #FDF1DD; border-radius: 8px;"></div></div>
+<div style="background: #FFFFFF; border: 1px solid #E1E9EF; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 12px; font-weight: 600; color: #17643F;">جاهز</span><div style="height: 34px; background: #E2F4EA; border-radius: 8px;"></div><div style="height: 34px; background: #E2F4EA; border-radius: 8px;"></div><div style="height: 34px; background: #E2F4EA; border-radius: 8px;"></div></div>
+</div>
+<a href="#orders" style="font-weight: 600; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center;">اكتشف المزيد ←</a>
+</article>
+<article class="card" style="border: 1px solid #E1E9EF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px; background: #062B3D; color: #FFFFFF;">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F5A524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M7 15l4-4 3 3 5-6"></path></svg>
+<h3 style="margin: 0; font-size: 22px;">التقارير والتكامل المحاسبي</h3>
+<p style="margin: 0; color: #C3D6E2; font-size: 15px;">تقارير أداء دقيقة، تكامل مع Oracle وSAP وOdoo، وتحليل إلكتروني للأضرار بالذكاء الاصطناعي.</p>
+<a href="#reports" style="color: #FFFFFF; font-weight: 600; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; margin-top: auto;">اكتشف المزيد ←</a>
+</article>
+<article class="card" style="border: 1px solid #E1E9EF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px; background: #F7FAFC;">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#004C6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2l-3 4v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+<h3 style="margin: 0; font-size: 20px;">المبيعات والمشتريات والمخزون</h3>
+<p style="margin: 0; color: #3D5363; font-size: 15px;">نظّم الشراء والمدفوعات، تابع حركة المخزون، وأصدر فواتير معتمدة ملتزمة باللوائح.</p>
+<a href="#inventory" style="font-weight: 600; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; margin-top: auto;">اكتشف المزيد ←</a>
+</article>
+<article class="card" style="border: 1px solid #E1E9EF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px; background: #F7FAFC;">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#004C6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7"></path><path d="M18 14a6 6 0 0 1 3.5 6"></path></svg>
+<h3 style="margin: 0; font-size: 20px;">الموظفون والصلاحيات والفروع</h3>
+<p style="margin: 0; color: #3D5363; font-size: 15px;">نظّم فرق العمل ووزّع الصلاحيات حسب الأدوار، مع تنسيق شامل لكل فروعك.</p>
+<a href="#team" style="font-weight: 600; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; margin-top: auto;">اكتشف المزيد ←</a>
+</article>
+<article class="card" style="border: 1px solid #E1E9EF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px; background: #F7FAFC;">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#004C6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M9 15l2 2 4-4"></path></svg>
+<h3 style="margin: 0; font-size: 20px;">العملاء والمواعيد</h3>
+<p style="margin: 0; color: #3D5363; font-size: 15px;">سجل مفصّل للعملاء والمركبات، وحجز مواعيد ومتابعة ذاتية للطلبات.</p>
+<a href="#customers" style="font-weight: 600; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; margin-top: auto;">اكتشف المزيد ←</a>
+</article>
+</div>
+</div>
+</section>
+
+<section id="pricing" aria-labelledby="price-h" style="padding: 88px 0;">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px;">
+<div style="display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center;">
+<span style="color: #1D5A7E; font-weight: 600; font-size: 15px;">الباقات</span>
+<h2 id="price-h" class="h2" style="margin: 0; font-size: 38px; line-height: 1.3; color: #004C6D;">باقة تناسب حجم ورشتك</h2>
+<p style="margin: 0; color: #3D5363; font-size: 17px;">الأسعار سنوية بالريال السعودي. ابدأ مجاناً وترقَّ متى ما احتجت.</p>
+</div>
+<div class="g4" style="align-items: stretch;">
+<article style="background: #FFFFFF; border: 1px solid #E1E9EF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 16px;">
+<div><h3 style="margin: 0; font-size: 20px;">المجانية</h3><p style="margin: 4px 0 0; color: #4A6070; font-size: 14px;">ابدأ من غير التزام</p></div>
+<div style="display: flex; align-items: baseline; gap: 6px;"><span style="font-size: 40px; font-weight: 700; color: #004C6D;">٠</span><span style="color: #4A6070; font-size: 14px;">ر.س / سنوياً</span></div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #2C4352; flex: 1;">
+<li>طلبات الإصلاح</li><li>حتى ٥ مستخدمين</li><li>سجل الطلبات</li><li>الفواتير الإلكترونية</li>
+</ul>
+<a href="#signup" class="btn" style="min-height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid #004C6D; color: #004C6D; text-decoration: none; font-weight: 600;">ابدأ مجاناً</a>
+</article>
+<article style="background: #FFFFFF; border: 1px solid #E1E9EF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 16px;">
+<div><h3 style="margin: 0; font-size: 20px;">الأساسية</h3><p style="margin: 4px 0 0; color: #4A6070; font-size: 14px;">مثالية لبداية توسعك</p></div>
+<div style="display: flex; align-items: baseline; gap: 6px;"><span style="font-size: 40px; font-weight: 700; color: #004C6D;">١٬٢٠٠</span><span style="color: #4A6070; font-size: 14px;">ر.س / سنوياً</span></div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #2C4352; flex: 1;">
+<li>كل مزايا الباقة المجانية</li><li>[عدد] مستخدمين</li><li>إضافة فروع</li><li>حتى ٣ فروع</li>
+</ul>
+<a href="#signup" class="btn" style="min-height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid #004C6D; color: #004C6D; text-decoration: none; font-weight: 600;">اختر الأساسية</a>
+</article>
+<article style="background: #062B3D; color: #FFFFFF; border: 2px solid {{accent}}; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 16px; position: relative;">
+<span style="position: absolute; top: -14px; right: 24px; background: {{accent}}; color: #10222E; font-size: 13px; font-weight: 700; padding: 4px 12px; border-radius: 999px;">الأكثر طلباً</span>
+<div><h3 style="margin: 0; font-size: 20px;">الاحترافية</h3><p style="margin: 4px 0 0; color: #C3D6E2; font-size: 14px;">كل ما تحتاجه لنمو أسرع</p></div>
+<div style="display: flex; align-items: baseline; gap: 6px;"><span style="font-size: 40px; font-weight: 700;">٢٬٠٠٠</span><span style="color: #C3D6E2; font-size: 14px;">ر.س / سنوياً</span></div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #E3EEF5; flex: 1;">
+<li>كل مزايا الباقة الأساسية</li><li>فواتير المشتريات والمخزون</li><li>حجز المواعيد</li><li>[عدد] فروع</li>
+</ul>
+<a href="#signup" class="btn" style="min-height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: {{accent}}; color: #10222E; text-decoration: none; font-weight: 700;">اختر الاحترافية</a>
+</article>
+<article style="background: #FFFFFF; border: 1px solid #E1E9EF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 16px;">
+<div><h3 style="margin: 0; font-size: 20px;">المميزة</h3><p style="margin: 4px 0 0; color: #4A6070; font-size: 14px;">حلول متقدمة للورش الكبيرة</p></div>
+<div style="display: flex; align-items: baseline; gap: 6px;"><span style="font-size: 40px; font-weight: 700; color: #004C6D;">٣٬٥٠٠</span><span style="color: #4A6070; font-size: 14px;">ر.س / سنوياً</span></div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #2C4352; flex: 1;">
+<li>كل مزايا الباقة الاحترافية</li><li>بوابة الخدمة الذاتية</li><li>الربط مع الموردين</li><li>[عدد] فروع</li>
+</ul>
+<a href="#signup" class="btn" style="min-height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid #004C6D; color: #004C6D; text-decoration: none; font-weight: 600;">اختر المميزة</a>
+</article>
+</div>
+<a href="#compare" style="align-self: center; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center;">قارن كل المزايا بالتفصيل ←</a>
+</div>
+</section>
+
+<section id="faq" aria-labelledby="faq-h" style="padding: 88px 0; background: #FFFFFF;">
+<div class="wrap g2" style="align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<span style="color: #1D5A7E; font-weight: 600; font-size: 15px;">الأسئلة الشائعة</span>
+<h2 id="faq-h" class="h2" style="margin: 0; font-size: 38px; line-height: 1.3; color: #004C6D;">ما حصلت إجابتك؟ كلمنا ونوضح لك كل شي</h2>
+<p style="margin: 0; color: #3D5363; font-size: 17px;">الرقم الموحد <a href="tel:920010431" style="font-weight: 700;">920010431</a></p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<details open="" style="border: 1px solid #E1E9EF; border-radius: 14px; padding: 4px 20px; background: #F7FAFC;">
+<summary style="min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-weight: 600; font-size: 17px;">ما هي ورشة دايركت؟<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D5A7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></summary>
+<p style="margin: 0 0 18px; color: #3D5363; font-size: 15px;">منصة سحابية لإدارة مراكز صيانة المركبات: الطلبات، الفواتير المعتمدة، المخزون، الموظفين والفروع، ومواعيد العملاء — في مكان واحد.</p>
+</details>
+<details style="border: 1px solid #E1E9EF; border-radius: 14px; padding: 4px 20px; background: #F7FAFC;">
+<summary style="min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-weight: 600; font-size: 17px;">كيف يمكنني التسجيل؟<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D5A7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></summary>
+<p style="margin: 0 0 18px; color: #3D5363; font-size: 15px;">[خطوات التسجيل]</p>
+</details>
+<details style="border: 1px solid #E1E9EF; border-radius: 14px; padding: 4px 20px; background: #F7FAFC;">
+<summary style="min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-weight: 600; font-size: 17px;">ما هي خطط الأسعار المتوفرة؟<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D5A7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></summary>
+<p style="margin: 0 0 18px; color: #3D5363; font-size: 15px;">أربع باقات سنوية: المجانية، الأساسية، الاحترافية، والمميزة.</p>
+</details>
+<details style="border: 1px solid #E1E9EF; border-radius: 14px; padding: 4px 20px; background: #F7FAFC;">
+<summary style="min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-weight: 600; font-size: 17px;">هل يوجد تجربة مجانية؟<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D5A7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></summary>
+<p style="margin: 0 0 18px; color: #3D5363; font-size: 15px;">نعم، الباقة المجانية متاحة لتبدأ فوراً، وتقدر تترقى في أي وقت.</p>
+</details>
+</div>
+</div>
+</section>
+
+<section id="contact" aria-labelledby="contact-h" style="padding: 88px 0; background: #062B3D; color: #FFFFFF;">
+<div class="wrap g2" style="align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 20px;">
+<h2 id="contact-h" class="h2" style="margin: 0; font-size: 40px; line-height: 1.25;">جاهز تنظّم ورشتك؟</h2>
+<p style="margin: 0; color: #C3D6E2; font-size: 18px;">ابدأ بالباقة المجانية اليوم، أو تواصل معنا للشراكات والاستفسارات.</p>
+<a href="#signup" class="btn" style="align-self: flex-start; min-height: 52px; display: inline-flex; align-items: center; padding: 0 26px; border-radius: 12px; background: {{accent}}; color: #10222E; text-decoration: none; font-weight: 700; font-size: 17px;">ابدأ تجربتك المجانية</a>
+<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 12px;">
+<a href="tel:920010431" style="display: flex; align-items: center; gap: 12px; color: #FFFFFF; text-decoration: none; min-height: 44px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CC3DA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg><span><span style="display: block; font-size: 13px; color: #9FBACB;">الرقم الموحد</span><strong>920010431</strong></span></a>
+<a href="mailto:support@warshadirect.com" style="display: flex; align-items: center; gap: 12px; color: #FFFFFF; text-decoration: none; min-height: 44px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CC3DA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 6l-10 7L2 6"></path></svg><span><span style="display: block; font-size: 13px; color: #9FBACB;">البريد الإلكتروني</span><strong>support@warshadirect.com</strong></span></a>
+</div>
+</div>
+<form style="background: #FFFFFF; color: #10222E; border-radius: 20px; padding: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;" aria-label="نموذج التواصل">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600;">الاسم<input type="text" style="min-height: 46px; border: 1px solid #C9D8E2; border-radius: 10px; padding: 0 12px; font: inherit; font-weight: 400;"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600;">رقم الجوال<input type="tel" style="min-height: 46px; border: 1px solid #C9D8E2; border-radius: 10px; padding: 0 12px; font: inherit; font-weight: 400;"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600;">البريد الإلكتروني<input type="email" style="min-height: 46px; border: 1px solid #C9D8E2; border-radius: 10px; padding: 0 12px; font: inherit; font-weight: 400;"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600;">اسم الشركة<input type="text" style="min-height: 46px; border: 1px solid #C9D8E2; border-radius: 10px; padding: 0 12px; font: inherit; font-weight: 400;"></label>
+<label style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600;">الرسالة<textarea rows="4" style="border: 1px solid #C9D8E2; border-radius: 10px; padding: 10px 12px; font: inherit; font-weight: 400; resize: vertical;"></textarea></label>
+<button type="submit" class="btn" style="grid-column: 1 / -1; min-height: 50px; border: 0; border-radius: 12px; background: #004C6D; color: #FFFFFF; font: inherit; font-weight: 700; font-size: 16px;">إرسال</button>
+</form>
+</div>
+</section>
+
+</main>
+
+<footer style="background: #04202E; color: #9FBACB; padding: 40px 0;">
+<div class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
+<span style="color: #FFFFFF; font-weight: 700; font-size: 18px;">ورشة دايركت</span>
+<nav aria-label="روابط التذييل" style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 15px;">
+<a href="#features" style="color: #CFE3EF; text-decoration: none;">عن المنتج</a>
+<a href="#pricing" style="color: #CFE3EF; text-decoration: none;">الباقات</a>
+<a href="#contact" style="color: #CFE3EF; text-decoration: none;">تواصل معنا</a>
+<a href="#privacy" style="color: #CFE3EF; text-decoration: none;">سياسة الخصوصية</a>
+</nav>
+<span style="font-size: 14px;">© [السنة] ورشة دايركت</span>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#F5A524","options":["#F5A524","#3FB68B","#9CC3DA","#FFFFFF"]},"$preview":{"width":1440,"height":6200}}'>
+class Component extends DCLogic {
+renderVals() {
+return { accent: this.props.accent ?? '#F5A524' };
+}
+}
+</script>
+</body>
+</html>

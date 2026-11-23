@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>ورشة دايركت — الاتجاه ب</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#246386}a:hover{color:#184259}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+.k{font-family:'Noto Kufi Arabic','Somar',system-ui,sans-serif}
+.hub{display:grid;grid-template-columns:minmax(0,1fr) 280px minmax(0,1fr);gap:24px;align-items:center}
+.hubcol{display:flex;flex-direction:column;gap:24px}
+.tabs-wrap{display:grid;grid-template-columns:300px minmax(0,1fr);gap:32px;align-items:start}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.btn{transition:background-color .18s ease,box-shadow .18s ease;cursor:pointer}
+.btn:hover{box-shadow:0 6px 18px rgba(36,99,134,.22)}
+.tab{transition:background-color .18s ease,color .18s ease;cursor:pointer}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #2B3891;outline-offset:2px}
+@media (max-width:900px){.hub{grid-template-columns:minmax(0,1fr)}.tabs-wrap{grid-template-columns:minmax(0,1fr)}.g3{grid-template-columns:minmax(0,1fr)}.nav-links{display:none!important}.h1{font-size:36px!important}.h2{font-size:28px!important}}
+@media (prefers-reduced-motion:reduce){.btn,.tab{transition:none}}
+</style>
+</helmet>
+<div style="font-family: 'IBM Plex Sans Arabic', 'Somar', system-ui, sans-serif; color: #0E2230; background: #FFFFFF; line-height: 1.65; font-size: 16px;">
+
+<header style="border-bottom: 1px solid #E6EEF3;">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 76px;">
+<span class="k" style="display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; color: #004C6D;">
+<svg width="34" height="34" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="#EBF3F8"></circle><path d="M21 10l-7 8 7 8" stroke="#004C6D" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><path d="M26 13l-4 5 4 5" stroke="{{accent}}" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+ورشة دايركت</span>
+<nav class="nav-links" aria-label="القائمة الرئيسية" style="display: flex; gap: 28px; font-size: 15px; font-weight: 500;">
+<a href="#b-eco" style="color: #33495A; text-decoration: none;">المنظومة</a>
+<a href="#b-features" style="color: #33495A; text-decoration: none;">المزايا</a>
+<a href="#b-pricing" style="color: #33495A; text-decoration: none;">الباقات</a>
+<a href="#b-contact" style="color: #33495A; text-decoration: none;">تواصل معنا</a>
+</nav>
+<div style="display: flex; gap: 10px; align-items: center;">
+<a href="#login" style="min-height: 44px; display: inline-flex; align-items: center; padding: 0 12px; color: #004C6D; text-decoration: none; font-weight: 600;">دخول</a>
+<a href="#signup" class="btn" style="min-height: 44px; display: inline-flex; align-items: center; padding: 0 18px; border-radius: 999px; background: #246386; color: #FFFFFF; text-decoration: none; font-weight: 600;">ابدأ مجاناً</a>
+</div>
+</div>
+</header>
+
+<main>
+<section style="padding: 88px 0 0; background: #F4F8FB;">
+<div class="wrap" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px;">
+<span style="display: inline-flex; gap: 8px; align-items: center; font-size: 14px; color: #2B3891; background: #EAECF5; padding: 6px 14px; border-radius: 999px; font-weight: 600;">فواتير معتمدة من هيئة الزكاة والضريبة والجمارك</span>
+<h1 class="k h1" style="margin: 0; font-size: 54px; line-height: 1.35; color: #004C6D; max-width: 15em; font-weight: 700;">ورشتك كلها، <span style="color: {{accent}};">في شاشة واحدة</span></h1>
+<p style="margin: 0; max-width: 36em; font-size: 19px; color: #3B5263;">نظام سحابي متكامل لإدارة مراكز الصيانة: الطلبات، القطع، الفواتير، الموظفين والمواعيد — ومتوافق مع الجهات الرسمية وشركات التأمين.</p>
+<div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+<a href="#signup" class="btn" style="min-height: 54px; display: inline-flex; align-items: center; padding: 0 30px; border-radius: 999px; background: #246386; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 17px;">ابدأ تجربتك المجانية</a>
+<a href="#b-contact" style="min-height: 54px; display: inline-flex; align-items: center; padding: 0 24px; border-radius: 999px; background: #FFFFFF; border: 1px solid #C9DAE5; color: #004C6D; text-decoration: none; font-weight: 600; font-size: 17px;">تحدث مع فريقنا</a>
+</div>
+<div role="img" aria-label="معاينة لوحة تحكم ورشة دايركت" style="width: 100%; max-width: 1000px; margin-top: 40px; background: #FFFFFF; border: 1px solid #DCE7EE; border-bottom: 0; border-radius: 20px 20px 0 0; box-shadow: 0 -10px 60px rgba(0,76,109,0.10); overflow: hidden; text-align: right;">
+<div style="display: flex; gap: 6px; padding: 12px 16px; border-bottom: 1px solid #EEF3F6;"><span style="width: 10px; height: 10px; border-radius: 99px; background: #DCE7EE;"></span><span style="width: 10px; height: 10px; border-radius: 99px; background: #DCE7EE;"></span><span style="width: 10px; height: 10px; border-radius: 99px; background: #DCE7EE;"></span></div>
+<div style="display: grid; grid-template-columns: 180px minmax(0, 1fr); min-height: 300px;">
+<div style="background: #004C6D; padding: 16px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: #CFE3EF;">
+<span style="padding: 8px 10px; border-radius: 8px; background: rgba(255,255,255,0.14); color: #FFFFFF; font-weight: 600;">لوحة الأداء</span>
+<span style="padding: 8px 10px;">طلبات الإصلاح</span><span style="padding: 8px 10px;">المخزون</span><span style="padding: 8px 10px;">الفواتير</span><span style="padding: 8px 10px;">المواعيد</span><span style="padding: 8px 10px;">الموظفون</span>
+</div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;">
+<div style="border: 1px solid #EEF3F6; border-radius: 12px; padding: 12px;"><div style="font-size: 12px; color: #4A6070;">طلبات مفتوحة</div><div style="font-size: 22px; font-weight: 700; color: #004C6D;">[00]</div></div>
+<div style="border: 1px solid #EEF3F6; border-radius: 12px; padding: 12px;"><div style="font-size: 12px; color: #4A6070;">مواعيد اليوم</div><div style="font-size: 22px; font-weight: 700; color: #004C6D;">[00]</div></div>
+<div style="border: 1px solid #EEF3F6; border-radius: 12px; padding: 12px;"><div style="font-size: 12px; color: #4A6070;">قطع بانتظار التوريد</div><div style="font-size: 22px; font-weight: 700; color: #004C6D;">[00]</div></div>
+<div style="border: 1px solid #EEF3F6; border-radius: 12px; padding: 12px;"><div style="font-size: 12px; color: #4A6070;">فواتير الشهر</div><div style="font-size: 22px; font-weight: 700; color: #004C6D;">[00]</div></div>
+</div>
+<div style="display: flex; align-items: flex-end; gap: 10px; height: 120px; padding: 12px; border: 1px solid #EEF3F6; border-radius: 12px;" aria-hidden="true">
+<div style="flex: 1; height: 40%; background: #D6E6F0; border-radius: 6px 6px 0 0;"></div><div style="flex: 1; height: 60%; background: #D6E6F0; border-radius: 6px 6px 0 0;"></div><div style="flex: 1; height: 50%; background: #D6E6F0; border-radius: 6px 6px 0 0;"></div><div style="flex: 1; height: 75%; background: #83B5D1; border-radius: 6px 6px 0 0;"></div><div style="flex: 1; height: 65%; background: #D6E6F0; border-radius: 6px 6px 0 0;"></div><div style="flex: 1; height: 90%; background: {{accent}}; border-radius: 6px 6px 0 0;"></div><div style="flex: 1; height: 70%; background: #D6E6F0; border-radius: 6px 6px 0 0;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-label="الاعتمادات" style="border-top: 1px solid #E6EEF3; border-bottom: 1px solid #E6EEF3;">
+<div class="wrap" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px 48px; padding-top: 24px; padding-bottom: 24px; color: #3B5263; font-size: 15px;">
+<span>فواتيرك معتمدة من <strong style="color: #0E2230;">[شعار] هيئة الزكاة والضريبة والجمارك</strong></span>
+<span aria-hidden="true" style="width: 1px; height: 24px; background: #DCE7EE;"></span>
+<span>متوافق مع معايير <strong style="color: #0E2230;">[شعار] مركز سلامة المركبات</strong></span>
+</div>
+</section>
+
+<section id="b-eco" aria-labelledby="b-eco-h" style="padding: 96px 0;">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 48px;">
+<div style="text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center;">
+<h2 id="b-eco-h" class="k h2" style="margin: 0; font-size: 36px; line-height: 1.4; color: #004C6D;">منظومة متكاملة تربط كل أطراف الصيانة</h2>
+<p style="margin: 0; color: #3B5263; font-size: 17px; max-width: 34em;">ورشتك في المركز، وكل طرف يتصل بها مباشرة على نفس المنصة.</p>
+</div>
+<div class="hub">
+<div class="hubcol">
+<div style="border: 1px solid #DCE7EE; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px;"><strong class="k" style="font-size: 18px; color: #004C6D;">ملاك مراكز الصيانة</strong><span style="color: #3B5263; font-size: 15px;">إدارة الطلبات والفروع والموظفين والمخزون من لوحة واحدة.</span></div>
+<div style="border: 1px solid #DCE7EE; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px;"><strong class="k" style="font-size: 18px; color: #004C6D;">مالك المركبة</strong><span style="color: #3B5263; font-size: 15px;">حجز المواعيد ومتابعة حالة الإصلاح ذاتياً.</span></div>
+</div>
+<div style="aspect-ratio: 1 / 1; border-radius: 999px; border: 2px dashed #83B5D1; display: grid; place-items: center; padding: 28px;">
+<div style="width: 100%; aspect-ratio: 1 / 1; border-radius: 999px; background: #004C6D; color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; box-shadow: 0 0 0 14px #EBF3F8;">
+<svg width="40" height="40" viewBox="0 0 36 36" aria-hidden="true"><path d="M21 10l-7 8 7 8" stroke="#FFFFFF" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><path d="M26 13l-4 5 4 5" stroke="#9CC3DA" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<strong class="k" style="font-size: 20px;">ورشة دايركت</strong>
+<span style="font-size: 13px; color: #CFE3EF;">الأنظمة والفواتير والجهات الرسمية</span>
+</div>
+</div>
+<div class="hubcol">
+<div style="border: 1px solid #DCE7EE; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px;"><strong class="k" style="font-size: 18px; color: #004C6D;">موردو قطع الغيار</strong><span style="color: #3B5263; font-size: 15px;">أتمتة تسعير وتوريد القطع مباشرة للورش.</span></div>
+<div style="border: 1px solid #DCE7EE; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px;"><strong class="k" style="font-size: 18px; color: #004C6D;">شركات تأمين المركبات</strong><span style="color: #3B5263; font-size: 15px;">إدارة المطالبات وتوجيهها إلى الورش المعتمدة.</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="b-features" aria-labelledby="b-feat-h" style="padding: 96px 0; background: #F4F8FB;">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px;">
+<h2 id="b-feat-h" class="k h2" style="margin: 0; font-size: 36px; line-height: 1.4; color: #004C6D;">كل عملياتك التشغيلية في مكان واحد</h2>
+<div class="tabs-wrap">
+<div role="tablist" aria-label="وحدات النظام" style="display: flex; flex-direction: column; gap: 8px;">
+<sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+<button type="button" role="tab" class="tab" aria-selected="{{ t.sel }}" onClick="{{ t.pick }}" style="min-height: 56px; text-align: right; padding: 12px 18px; border-radius: 14px; border: 1px solid {{ t.border }}; background: {{ t.bg }}; color: {{ t.fg }}; font: inherit; font-weight: 600; font-size: 16px;">{{ t.label }}</button>
+</sc-for>
+</div>
+<div role="tabpanel" style="background: #FFFFFF; border: 1px solid #DCE7EE; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 18px; min-height: 360px; box-sizing: border-box;">
+<h3 class="k" style="margin: 0; font-size: 24px; color: #004C6D;">{{ active.title }}</h3>
+<p style="margin: 0; color: #3B5263; font-size: 17px; max-width: 40em;">{{ active.body }}</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+<sc-for list="{{ active.points }}" as="p" hint-placeholder-count="4">
+<li style="display: flex; gap: 10px; align-items: flex-start; padding: 14px; border-radius: 12px; background: #F4F8FB; font-size: 15px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B3891" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 12l5 5L20 7"></path></svg>{{ p }}</li>
+</sc-for>
+</ul>
+<a href="#more" style="margin-top: auto; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center;">اكتشف المزيد ←</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="b-pricing" aria-labelledby="b-price-h" style="padding: 96px 0;">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 32px;">
+<div style="text-align: center; display: flex; flex-direction: column; gap: 10px; align-items: center;">
+<h2 id="b-price-h" class="k h2" style="margin: 0; font-size: 36px; line-height: 1.4; color: #004C6D;">قارن الباقات واختر ما يناسبك</h2>
+<p style="margin: 0; color: #3B5263;">الأسعار سنوية بالريال السعودي</p>
+</div>
+<div style="overflow-x: auto; border: 1px solid #DCE7EE; border-radius: 20px;">
+<table style="width: 100%; min-width: 760px; border-collapse: collapse; font-size: 15px; text-align: center;">
+<thead>
+<tr style="background: #F4F8FB;">
+<th scope="col" style="text-align: right; padding: 20px; font-weight: 600; color: #3B5263;">الميزة</th>
+<th scope="col" style="padding: 20px;"><div class="k" style="font-size: 17px; color: #004C6D;">المجانية</div><div style="font-size: 26px; font-weight: 700;">٠</div></th>
+<th scope="col" style="padding: 20px;"><div class="k" style="font-size: 17px; color: #004C6D;">الأساسية</div><div style="font-size: 26px; font-weight: 700;">١٬٢٠٠</div></th>
+<th scope="col" style="padding: 20px; background: #EAECF5;"><div style="font-size: 12px; font-weight: 700; color: #FFFFFF; background: {{accent}}; border-radius: 999px; display: inline-block; padding: 2px 10px;">الأكثر طلباً</div><div class="k" style="font-size: 17px; color: #004C6D;">الاحترافية</div><div style="font-size: 26px; font-weight: 700;">٢٬٠٠٠</div></th>
+<th scope="col" style="padding: 20px;"><div class="k" style="font-size: 17px; color: #004C6D;">المميزة</div><div style="font-size: 26px; font-weight: 700;">٣٬٥٠٠</div></th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-top: 1px solid #EEF3F6;"><th scope="row" style="text-align: right; padding: 16px 20px; font-weight: 500;">طلبات الإصلاح وسجل الطلبات</th><td>✓</td><td>✓</td><td style="background: #F6F7FB;">✓</td><td>✓</td></tr>
+<tr style="border-top: 1px solid #EEF3F6;"><th scope="row" style="text-align: right; padding: 16px 20px; font-weight: 500;">الفواتير الإلكترونية</th><td>✓</td><td>✓</td><td style="background: #F6F7FB;">✓</td><td>✓</td></tr>
+<tr style="border-top: 1px solid #EEF3F6;"><th scope="row" style="text-align: right; padding: 16px 20px; font-weight: 500;">المستخدمون</th><td>٥</td><td>[عدد]</td><td style="background: #F6F7FB;">[عدد]</td><td>[عدد]</td></tr>
+<tr style="border-top: 1px solid #EEF3F6;"><th scope="row" style="text-align: right; padding: 16px 20px; font-weight: 500;">الفروع</th><td>—</td><td>٣</td><td style="background: #F6F7FB;">[عدد]</td><td>[عدد]</td></tr>
+<tr style="border-top: 1px solid #EEF3F6;"><th scope="row" style="text-align: right; padding: 16px 20px; font-weight: 500;">فواتير المشتريات والمخزون</th><td>—</td><td>—</td><td style="background: #F6F7FB;">✓</td><td>✓</td></tr>
+<tr style="border-top: 1px solid #EEF3F6;"><th scope="row" style="text-align: right; padding: 16px 20px; font-weight: 500;">حجز المواعيد</th><td>—</td><td>—</td><td style="background: #F6F7FB;">✓</td><td>✓</td></tr>
+<tr style="border-top: 1px solid #EEF3F6;"><th scope="row" style="text-align: right; padding: 16px 20px; font-weight: 500;">بوابة الخدمة الذاتية والربط مع الموردين</th><td>—</td><td>—</td><td style="background: #F6F7FB;">—</td><td>✓</td></tr>
+<tr style="border-top: 1px solid #EEF3F6;"><td></td>
+<td style="padding: 18px 10px;"><a href="#signup" style="min-height: 44px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 999px; border: 1px solid #246386; text-decoration: none; font-weight: 600;">ابدأ مجاناً</a></td>
+<td style="padding: 18px 10px;"><a href="#signup" style="min-height: 44px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 999px; border: 1px solid #246386; text-decoration: none; font-weight: 600;">اختر</a></td>
+<td style="padding: 18px 10px; background: #F6F7FB;"><a href="#signup" class="btn" style="min-height: 44px; display: inline-flex; align-items: center; padding: 0 18px; border-radius: 999px; background: #246386; color: #FFFFFF; text-decoration: none; font-weight: 700;">اختر</a></td>
+<td style="padding: 18px 10px;"><a href="#signup" style="min-height: 44px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 999px; border: 1px solid #246386; text-decoration: none; font-weight: 600;">اختر</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section id="b-contact" aria-labelledby="b-cta-h" style="padding: 0 0 96px;">
+<div class="wrap">
+<div style="border-radius: 28px; background: #EBF3F8; padding: 56px 40px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px;">
+<h2 id="b-cta-h" class="k h2" style="margin: 0; font-size: 34px; line-height: 1.4; color: #004C6D;">ابدأ اليوم، والباقة المجانية بانتظارك</h2>
+<p style="margin: 0; color: #3B5263; font-size: 17px;">أو كلمنا على الرقم الموحد <a href="tel:920010431" style="font-weight: 700;">920010431</a> — <a href="mailto:support@warshadirect.com">support@warshadirect.com</a></p>
+<form aria-label="اشترك" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; width: 100%; max-width: 560px;">
+<label style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 4px; text-align: right; font-size: 14px; font-weight: 600;">رقم الجوال<input type="tel" style="min-height: 52px; border: 1px solid #C9DAE5; border-radius: 999px; padding: 0 18px; font: inherit; font-weight: 400; background: #FFFFFF;"></label>
+<button type="submit" class="btn" style="align-self: flex-end; min-height: 52px; padding: 0 28px; border: 0; border-radius: 999px; background: #246386; color: #FFFFFF; font: inherit; font-weight: 700;">تواصلوا معي</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer style="border-top: 1px solid #E6EEF3; padding: 32px 0; color: #4A6070; font-size: 14px;">
+<div class="wrap" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px;">
+<span class="k" style="font-weight: 700; color: #004C6D;">ورشة دايركت</span>
+<nav aria-label="روابط التذييل" style="display: flex; gap: 20px; flex-wrap: wrap;"><a href="#b-features">عن المنتج</a><a href="#b-pricing">الباقات</a><a href="#b-contact">تواصل معنا</a><a href="#privacy">سياسة الخصوصية</a></nav>
+<span>© [السنة] ورشة دايركت</span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2B3891","options":["#2B3891","#246386","#1E7A4E"]},"$preview":{"width":1440,"height":5600}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { tab: 0 }; }
+renderVals() {
+const accent = this.props.accent ?? '#2B3891';
+const data = [
+{ label: 'إدارة الطلبات والموردين', title: 'إدارة الطلبات والموردين', body: 'تحكّم شامل في عمليات الإصلاح من الطلب حتى التسليم، مع تنظيم طلبات القطع والتواصل مع الموردين عبر لوحة أداء متكاملة.', points: ['تتبع حالة كل طلب لحظياً', 'إرسال طلبات القطع للموردين', 'وثيقة دخول وخروج المركبة', 'لوحة أداء لكل فرع'] },
+{ label: 'التقارير والتكامل المحاسبي', title: 'التقارير والتكامل المحاسبي والتقنيات المتقدمة', body: 'أدر ورشتك من الهاتف أو اللوحي أو الحاسوب، مع تكامل مع الأنظمة المحاسبية وتقارير أداء دقيقة.', points: ['تكامل مع Oracle وSAP وOdoo', 'تحليل الأضرار بالذكاء الاصطناعي', 'تقارير أداء تفصيلية', 'يعمل على كل الأجهزة'] },
+{ label: 'المبيعات والمشتريات والمخزون', title: 'إدارة المبيعات والمشتريات والمخزون', body: 'نظّم الشراء والمدفوعات بدقة، وتابع حركة المخزون، وأصدر الفواتير المعتمدة مع الالتزام باللوائح التنظيمية.', points: ['فواتير ضريبية معتمدة', 'عروض أسعار احترافية', 'تتبع حركة المخزون', 'فواتير المشتريات'] },
+{ label: 'الموظفون والصلاحيات والفروع', title: 'إدارة الموظفين والصلاحيات والفروع', body: 'تحكم كامل بتنظيم فرق العمل وتوزيع الصلاحيات حسب الأدوار، مع تنسيق شامل للفروع المختلفة.', points: ['صلاحيات حسب الدور', 'إدارة عدة فروع', 'توزيع المهام على الفنيين', 'خصوصية بيانات كل فرع'] },
+{ label: 'العملاء والمواعيد', title: 'إدارة العملاء والمواعيد', body: 'سجل مفصّل لبيانات العملاء والمركبات، مع حجز مواعيد ومتابعة ذاتية للطلبات من العميل نفسه.', points: ['سجل العميل والمركبة', 'حجز المواعيد وإدارتها', 'بوابة متابعة ذاتية للعميل', 'استمارة المخالصة النهائية'] }
+];
+const cur = this.state.tab;
+const tabs = data.map((d, i) => ({
+label: d.label,
+sel: i === cur ? 'true' : 'false',
+bg: i === cur ? '#FFFFFF' : 'transparent',
+fg: i === cur ? accent : '#33495A',
+border: i === cur ? '#C9D2EA' : 'transparent',
+pick: () => this.setState({ tab: i })
+}));
+return { accent, tabs, active: data[cur] };
+}
+}
+</script>
+</body>
+</html>
