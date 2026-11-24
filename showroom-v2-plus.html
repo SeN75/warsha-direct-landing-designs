@@ -452,6 +452,42 @@ main>section[id]:not(#top){padding-top:72px!important;padding-bottom:72px!import
 .js #scanStage .spot{transform:none}.js .scan-grid #estList li{opacity:1}.est-ready{opacity:1;transform:none}
 .js #cta:not(.parked) .pcar{transform:none}.beam{display:none}
 }
+
+/* ---- round 4: closing story ---- */
+.park{height:178px;margin-top:14px}
+.pcone{position:absolute;bottom:16px;left:calc(50% - 152px);width:26px;height:34px;transform-origin:50% 100%}
+.pcone:dir(ltr){left:calc(50% + 126px)}
+.pphone{position:absolute;bottom:92px;left:calc(50% - 178px);width:34px;height:58px;opacity:0;transform:translateY(10px) rotate(-10deg);transition:opacity .35s,transform .45s cubic-bezier(.2,1.5,.4,1)}
+.pphone:dir(ltr){left:calc(50% + 144px);transform:translateY(10px) rotate(10deg)}
+.pphone::after{content:'';position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,#fff 0,rgba(255,255,255,.6) 25%,transparent 60%);opacity:0;pointer-events:none}
+#cta.snap .pphone{opacity:1;transform:none}
+#cta.snap .pphone::after{animation:pflash .5s .25s ease-out}
+@keyframes pflash{0%{opacity:0}15%{opacity:1}100%{opacity:0}}
+#cta.fixed .pphone{opacity:0;transition-delay:0s}
+.pcar .dent,.pcar .frame{opacity:0;transition:opacity .35s}
+#cta.hit .pcar .dent{opacity:1}
+#cta.snap .pcar .frame{opacity:1}
+#cta.fixed .pcar .dent,#cta.fixed .pcar .frame{opacity:0;transition-duration:.8s}
+#cta.hit .pcar .body-g{animation:pshake .45s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pshake{20%{transform:rotate(-2.5deg) translateX(3px)}45%{transform:rotate(1.2deg) translateX(-2px)}70%{transform:rotate(-.6deg)}}
+#cta.hit .pcone{animation:pwobble .7s cubic-bezier(.3,1.6,.5,1)}
+.pcone:dir(rtl){--w:-1}.pcone{--w:1}
+@keyframes pwobble{25%{transform:rotate(calc(var(--w) * 16deg))}55%{transform:rotate(calc(var(--w) * -6deg))}80%{transform:rotate(calc(var(--w) * 2deg))}}
+#cta.fixed .pcone{opacity:0;transform:translateY(8px) scale(.8);transition:opacity .6s,transform .6s}
+.pcar{transition:color .6s}
+#cta.glow .pcar{color:var(--gr);filter:drop-shadow(0 0 18px rgba(74,222,155,.55))}
+.pbub{position:absolute;top:0;inset-inline:0;margin-inline:auto;width:max-content;max-width:100%;display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:14px;background:var(--c27);border:1px solid var(--c8);font-size:15px;font-weight:700;white-space:nowrap;opacity:0;transform:translateY(8px) scale(.96);transition:opacity .3s,transform .35s cubic-bezier(.2,1.5,.4,1),border-color .3s,color .3s}
+.pbub.on{opacity:1;transform:none}
+.pbub.ok{border-color:var(--gr);color:var(--gr)}
+.pbub svg{flex:none}
+.pbub .ic-ok{display:none}.pbub.ok .ic-ok{display:block}.pbub.ok .ic-msg{display:none}
+@media (max-width:600px){
+.park{height:158px;margin-top:22px}
+.pcone{left:calc(50% - 116px);width:22px;height:28px}.pcone:dir(ltr){left:calc(50% + 94px)}
+.pphone{left:calc(50% - 136px);bottom:78px;width:28px;height:48px}.pphone:dir(ltr){left:calc(50% + 108px)}
+.pbub{font-size:13px;padding:8px 12px}
+}
+@media (prefers-reduced-motion:reduce){.pcone{display:none}}
 </style>
 </head>
 <body>
@@ -805,6 +841,9 @@ main>section[id]:not(#top){padding-top:72px!important;padding-bottom:72px!import
 <div class="wrap" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:26px">
 <h2 class="giant" id="giant">جاهز تبدأ؟</h2>
 <div class="park" aria-hidden="true"><span class="road"></span><span class="bay"></span>
+<div class="pbub" id="pbub"><svg class="ic-msg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><svg class="ic-ok" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>تم التسليم</span></div>
+<svg class="pcone" viewBox="0 0 26 34"><path d="M13 2 L22 30 H4 Z" fill="var(--am)"/><path d="M8.5 16 h9 M6.5 23 h13" stroke="var(--c9)" stroke-width="3"/><rect x="1" y="29" width="24" height="4" rx="1.5" fill="var(--c18)"/></svg>
+<svg class="pphone" viewBox="0 0 34 58"><rect x="1.5" y="1.5" width="31" height="55" rx="6" fill="var(--s2)" stroke="var(--tx)" stroke-width="2"/><rect x="5" y="8" width="24" height="38" rx="2" fill="var(--c22)"/><circle cx="17" cy="51" r="2" fill="var(--tx)"/><path d="M11 20 h4 l2 -3 h4 l2 3 h0 v12 h-12 z" fill="none" stroke="var(--cy)" stroke-width="1.6" stroke-linejoin="round"/><circle cx="17" cy="26" r="2.6" fill="none" stroke="var(--cy)" stroke-width="1.6"/></svg>
 <svg class="pcar" viewBox="0 0 240 84">
 <defs><linearGradient id="lb" x1="1" x2="0"><stop offset="0" stop-color="#FFD58A" stop-opacity=".55"/><stop offset="1" stop-color="#FFD58A" stop-opacity="0"/></linearGradient></defs>
 <path class="lightbeam" d="M14 46 L-150 22 L-150 74 Z" fill="url(#lb)"/>
@@ -814,6 +853,8 @@ main>section[id]:not(#top){padding-top:72px!important;padding-bottom:72px!import
 <path d="M148 38 L148 60 M84 38 L82 60" stroke="currentColor" stroke-opacity=".5" stroke-width="1.6"/>
 <path d="M12 50 h10" stroke="#FFD58A" stroke-width="4" stroke-linecap="round"/>
 <path d="M228 46 h6" stroke="var(--rd)" stroke-width="4" stroke-linecap="round"/>
+<path class="dent" d="M11 54 l5 -4 l3 5 l5 -6 l3 6 l5 -3" stroke="var(--rd)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<g class="frame" stroke="var(--cy)" stroke-width="2.4" stroke-linecap="round"><path d="M2 36 v-8 h10 M44 28 h10 v8 M54 66 v8 h-10 M12 74 h-10 v-8"/></g>
 </g>
 <g class="wheel"><circle cx="58" cy="64" r="16" fill="var(--bg)" stroke="currentColor" stroke-width="2.4"/><path d="M58 52 V76 M46 64 H70" stroke="currentColor" stroke-opacity=".6" stroke-width="2"/></g>
 <g class="wheel"><circle cx="192" cy="64" r="16" fill="var(--bg)" stroke="currentColor" stroke-width="2.4"/><path d="M192 52 V76 M180 64 H204" stroke="currentColor" stroke-opacity=".6" stroke-width="2"/></g>
@@ -1172,17 +1213,27 @@ if (matchMedia('(hover: hover)').matches && !reduce){
   });
 }
 
-// CTA: the car drives in, brakes, flashes its lights, and the button pops
+// CTA: the whole story in one scene: bump, photo, follow-up, delivered
 const cta = document.getElementById('cta');
 if (cta){
-  if (reduce || only) cta.classList.add('parked');
+  const bub = document.getElementById('pbub'), bubT = bub && bub.querySelector('span');
+  const say = (t, ok) => { if (!bub) return; bub.classList.remove('on'); setTimeout(() => { bubT.textContent = t; bub.classList.toggle('ok', !!ok); bub.classList.add('on'); }, 220); };
+  const endState = () => { cta.classList.add('parked', 'fixed', 'lit'); if (bub){ bubT.textContent = 'تم التسليم'; bub.classList.add('ok', 'on'); } };
+  if (reduce || only) endState();
   else {
     const co = new IntersectionObserver(es => {
       if (!es.some(e => e.isIntersecting)) return; co.disconnect();
+      const at = (ms, fn) => setTimeout(fn, ms);
       cta.classList.add('driving', 'parked');
-      setTimeout(() => { cta.classList.remove('driving'); cta.classList.add('braked'); }, 1500);
-      setTimeout(() => cta.classList.add('lit'), 1950);
-    }, {threshold:.45});
+      at(1450, () => { cta.classList.remove('driving'); cta.classList.add('hit'); say('حادث بسيط في الصدام'); });
+      at(2500, () => { cta.classList.add('snap'); say('صوّرنا الضرر، والفحص الذكي جاهز'); });
+      at(3900, () => say('عرض السعر وصل على جوالك'));
+      at(5100, () => say('طلبنا القطعة من المورد'));
+      at(6300, () => say('سيارتك قيد الإصلاح'));
+      at(7500, () => { cta.classList.add('fixed', 'glow'); say('تم التسليم', true); });
+      at(8300, () => cta.classList.add('lit'));
+      at(9300, () => cta.classList.remove('glow'));
+    }, {threshold:.4});
     co.observe(cta);
   }
 }
