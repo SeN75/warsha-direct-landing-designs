@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-type="software" data-radius="soft" data-ground="sky" data-buttons="pill" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ورشة دايركت: نظام إدارة مراكز صيانة المركبات في السعودية</title>
+<meta name="description" content="طلبات الإصلاح والقطع والمخزون والفواتير المعتمدة في نظام سحابي واحد، والباقة المجانية حتى خمسة مستخدمين.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ورشة دايركت: نظام إدارة مراكز صيانة المركبات">
+<meta property="og:description" content="تابع كل سيارة من الاستقبال إلى الفاتورة المعتمدة.">
+<meta property="og:image" content="share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../v4/assets/client/cms_4FXvh81M.png" type="image/png">
+<meta name="theme-color" content="#f4f7f9">
+<!-- <link rel="canonical" href="https://[the client's domain]/"> -->
+<meta name="site-kind" content="software">
+<meta name="page-type" content="software">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../v4/assets/system.css">
+<link rel="stylesheet" href="../v4/assets/ui/cards.css">
+<link rel="stylesheet" href="../v4/assets/motion/motion.css">
+<link rel="stylesheet" href="../v4/assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="../v4/assets/layout/layout.css">
+<link rel="stylesheet" href="../v4/assets/icons/icon.css">
+<style>
+:root {
+  --p-bg: #f4f7f9; --p-surface: #e4edf2; --p-ink: #0f2230; --p-muted: #3a4d5a;
+  --p-accent: #004c6d; --p-accent-ink: #f4f7f9; --p-action: #004c6d; --p-action-ink: #f4f7f9;
+  --p-inv-bg: #0f2230; --p-inv-surface: #1d2f3c; --p-inv-ink: #f4f7f9; --p-inv-muted: #959fa7;
+  --p-inv-accent: #f4f7f9; --p-inv-accent-ink: #0f2230; --p-inv-action: #f4f7f9; --p-inv-action-ink: #0f2230;
+  --font-display: "Somar", "Geist", system-ui, sans-serif;
+  --font-text: "Somar", "Geist", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 500;
+  --display-tracking: 0;
+  --display-tracking-xl: 0;
+}
+</style>
+<link rel="stylesheet" href="../v4/assets/ui/base.css">
+<link rel="stylesheet" href="../v4/assets/ui/window/fragment.css">
+<link rel="stylesheet" href="../v4/assets/ui/checklist/fragment.css">
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script src="../v4/assets/backgrounds/backgrounds.js"></script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="../v4/assets/moments/moments.js">
+<link rel="modulepreload" href="../v4/assets/moments/lib.js">
+<link rel="modulepreload" href="../v4/assets/moments/liquid-type/moment.js">
+<style>
+/* the client's own licensed Arabic face (Somar); Arabic letters join, so no negative tracking */
+@font-face { font-family: "Somar"; src: url("../v4/fonts/Somar.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+h1, h2, h3, .t-lead, p, li { letter-spacing: 0; }
+.nav__logo img { height: 36px; width: auto; display: block; }
+.footer .nav__logo img { height: 40px; }
+
+/* the hero window: the app itself, the order list beside the open order (app-frame recipe) */
+.hero__window .app.ui { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); height: 100%; background: var(--u-bg); border: 1px solid var(--u-border); border-radius: var(--u-r); box-shadow: var(--u-shadow); text-align: start; }
+.app > .app__pane { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
+.app > .app__pane + .app__pane { border-inline-start: 1px solid var(--u-line); }
+.app > .app__pane > .ui-panel { width: 100%; border: 0; border-radius: 0; box-shadow: none; }
+.app > .app__pane::after { content: ""; position: absolute; inset: auto 0 0 0; height: 64px; background: linear-gradient(transparent, var(--u-bg)); pointer-events: none; }
+@media (max-width: 1023px) { .hero__window .app.ui { grid-template-columns: minmax(0, 1fr); } .app > .app__pane--list { display: none; } .app > .app__pane + .app__pane { border-inline-start: 0; } }
+
+#features .panel { --p-h: 300px; }
+#features .panel .frame__img { object-fit: contain; padding: var(--s-5); }
+@media (max-width: 639px) { #features .panel { --p-h: 200px; } }
+#forms .frame__img { object-fit: contain; }
+.marks { display: flex; flex-wrap: wrap; gap: var(--s-4); align-items: center; }
+.marks img { height: 48px; width: auto; background: #fff; border-radius: var(--r-sm); padding: var(--s-2) var(--s-3); box-sizing: content-box; }
+#who .tile .frame__img { object-position: 50% 100%; }
+#price .card { min-height: 460px; display: flex; flex-direction: column; gap: var(--s-4); }
+#price .card ul { flex: 1; margin: 0; padding: 0; list-style: none; }
+#price .plan-price { margin: 0; font: var(--display-weight) 48px/1.1 var(--font-display); font-variant-numeric: tabular-nums; }
+.stages { list-style: none; margin: var(--s-8) 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--s-5); }
+.stages li { display: flex; flex-direction: column; gap: var(--s-2); padding-top: var(--s-4); border-top: 2px solid var(--p-accent); }
+.stages b { font: var(--display-weight) 40px/1 var(--font-display); color: var(--p-accent); }
+.stages span { font-size: 20px; font-weight: 500; }
+.stages small { font-size: 15px; color: var(--muted); }
+@media (max-width: 1023px) { .stages { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 639px) { .stages { grid-template-columns: minmax(0, 1fr); gap: var(--s-3); } .stages b { font-size: 28px; } #statement h2 { font-size: 48px !important; } #price .card { min-height: 0; } #price .plan-price { font-size: 26px; } }
+.close__word { font-size: clamp(56px, 11vw, 140px); line-height: 1.35; letter-spacing: 0; white-space: normal; max-width: 100%; }
+@media (max-width: 639px) { .close__word { font-size: clamp(44px, 15vw, 96px); } }
+.ui-win__crumb { line-height: 1.6; }
+#who .rows { margin: 0; padding: 0; list-style: none; }
+#who .frame__img, #faq .frame__img { object-fit: contain; }
+.plan-price small { font-size: var(--t-small); color: var(--muted); font-weight: 400; }
+</style>
+
+<style>
+/* ---------- v4-improved ---------- */
+:root { --brand-blue: #3084B2; --brand-mid: #246386; --hero-ink: #0b1b27; }
+
+/* hero: a dark navy ground with a blueprint grid and the brand glow under the app window */
+.hero.ground-inverse { position: relative; isolation: isolate; overflow: clip;
+  background:
+    radial-gradient(55% 45% at 50% 100%, color-mix(in oklab, var(--brand-blue) 42%, transparent), transparent 72%),
+    radial-gradient(38% 38% at 88% 6%, color-mix(in oklab, var(--brand-mid) 45%, transparent), transparent 70%),
+    var(--hero-ink); }
+.hero.ground-inverse::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    linear-gradient(color-mix(in oklab, #fff 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, #fff 6%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(70% 60% at 50% 35%, #000, transparent);
+          mask-image: radial-gradient(70% 60% at 50% 35%, #000, transparent); }
+.hero.ground-inverse h1 { text-wrap: balance; }
+.hero.ground-inverse .hero__lead { color: var(--muted); }
+.hero__window { perspective: 1400px; filter: drop-shadow(0 40px 70px color-mix(in oklab, var(--brand-blue) 35%, transparent)); }
+.hero__window .app.ui { transform-origin: 50% 0; }
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 640px) {
+    .hero__window .app.ui { animation: win-tilt linear both; animation-timeline: scroll(root); animation-range: 0 55vh; }
+    @keyframes win-tilt { from { transform: rotateX(16deg) scale(.95); } to { transform: none; } }
+  }
+}
+
+/* the five stages light up one after another when they come on screen */
+.stages li { position: relative; border-top-color: color-mix(in oklab, var(--p-accent) 16%, transparent); }
+.stages li::before { content: ""; position: absolute; inset-inline: 0; top: -2px; height: 2px; background: var(--p-accent);
+  transform-origin: right; transform: scaleX(var(--on, 1)); transition: transform .7s cubic-bezier(.2,.7,.2,1) calc(var(--i, 0) * .35s); }
+.stages b { transition: color .4s calc(var(--i, 0) * .35s + .3s), transform .5s cubic-bezier(.2,.7,.2,1) calc(var(--i, 0) * .35s + .3s); }
+.js-stages .stages:not(.is-on) li { --on: 0; }
+.js-stages .stages:not(.is-on) b { color: color-mix(in oklab, var(--p-accent) 30%, transparent); transform: translateY(8px); }
+@media (prefers-reduced-motion: reduce) { .stages li::before, .stages b { transition: none; } }
+
+/* features: a quiet zoom on the product shot under the pointer */
+#features .card--row .panel { overflow: hidden; }
+#features .card--row .frame__img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+#features .card--row:hover .frame__img { transform: scale(1.04); }
+
+/* forms: two rows of chips moving in opposite directions, written for RTL */
+.chips { position: relative; display: grid; gap: var(--s-3); margin-top: var(--s-8);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.chips__row { display: flex; gap: var(--s-3); overflow: hidden; }
+.chips__track { display: flex; gap: var(--s-3); flex: none; min-width: 100%; justify-content: space-around; margin: 0; padding: 0; list-style: none; }
+.chips li { padding: 10px 22px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--card); font-weight: 500; white-space: nowrap; }
+.chips__row--alt li { background: transparent; color: var(--accent); border-color: color-mix(in oklab, var(--accent) 35%, transparent); }
+@media (prefers-reduced-motion: no-preference) {
+  .chips__track { animation: chips-run 40s linear infinite; }
+  .chips__row--alt .chips__track { animation-direction: reverse; animation-duration: 32s; }
+  .chips:hover .chips__track, .chips-wrap.is-paused .chips__track { animation-play-state: paused; }
+}
+@keyframes chips-run { to { transform: translateX(calc(100% + var(--s-3))); } }
+@media (prefers-reduced-motion: reduce) {
+  .chips { -webkit-mask-image: none; mask-image: none; }
+  .chips__track[aria-hidden] { display: none; }
+  .chips__track { flex-wrap: wrap; justify-content: flex-start; row-gap: var(--s-3); }
+  .chips-pause { display: none; }
+}
+.chips-wrap { position: relative; }
+.chips-pause { position: absolute; inset-inline-end: 0; top: calc(-1 * var(--s-6)); width: 32px; height: 32px; display: grid; place-items: center;
+  border: 1px solid var(--line-strong); border-radius: 999px; background: var(--card); color: var(--ink); cursor: pointer; }
+.chips-pause svg { width: 12px; height: 12px; fill: currentColor; }
+
+/* pricing: the most requested plan stands out, every plan has a real next step */
+#price .card { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
+#price .card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -18px color-mix(in oklab, var(--p-accent) 45%, transparent); }
+#price .plan--pick { position: relative; background:
+  radial-gradient(80% 60% at 50% 0%, color-mix(in oklab, var(--brand-blue) 40%, transparent), transparent 70%), var(--hero-ink); }
+.plan-badge { align-self: flex-start; padding: 4px 12px; border-radius: 999px; font-size: var(--t-small); font-weight: 500;
+  background: var(--p-inv-ink); color: var(--hero-ink); }
+#price .card ul li { padding-inline-start: 22px; position: relative; }
+#price .card ul li::before { content: ""; position: absolute; inset-inline-start: 0; top: .55em; width: 12px; height: 7px;
+  border-left: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); opacity: .7; }
+
+/* closing word: a light-to-brand fill */
+.close__word { background: linear-gradient(180deg, var(--p-inv-ink) 30%, var(--brand-blue)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.footer__col a bdi { unicode-bidi: isolate; direction: ltr; }
+</style>
+</head>
+<body>
+<!-- type: software
+     deal: hero centred, nav nav-cards, close close-word, footer footer-dark, rhythm surface-pairs, buttons pill, mark wordmark (the client's logo replaces it), grounds sky
+     palette: the client's own colours through start.mjs brand (navy #004C6D, blue ground); type geist dealt, Somar set over it for Arabic
+     moments: liquid-type in #statement, marquee-row in #forms -->
+
+<header class="nav">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">انتقل إلى المحتوى</a>
+    <a class="nav__logo" href="#top" aria-label="ورشة دايركت"><img src="../v4/assets/client/cms_4FXvh81M.png" alt="ورشة دايركت" width="169" height="62"></a>
+    <nav class="nav__links" aria-label="القائمة الرئيسية">
+      <div class="nav__item">
+        <a class="nav__link" href="#features">النظام <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav__menu">
+          <div class="wrap grid">
+            <a class="menu-card span-4" href="#features">
+              <div class="panel"><img class="frame__img" src="../v4/assets/client/cms_OBvKPgWP.png" alt="شاشة المخزون" loading="lazy"></div>
+              <span class="t-card">المخزون والمشتريات</span>
+              <span class="t-small muted">كل قطعة بتكلفتها وكميتها</span>
+            </a>
+            <a class="menu-card span-4" href="#features">
+              <div class="panel"><img class="frame__img" src="../v4/assets/client/cms_DKXU7EfT.png" alt="شاشة المواعيد" loading="lazy"></div>
+              <span class="t-card">حجز المواعيد</span>
+              <span class="t-small muted">العميل يحجز من جواله</span>
+            </a>
+            <a class="menu-card span-4" href="#forms">
+              <div class="panel"><img class="frame__img" src="../v4/assets/client/cms_gdkYdS0X.png" alt="النظام على الجوال واللوحي والحاسوب" loading="lazy"></div>
+              <span class="t-card">الفواتير المعتمدة</span>
+              <span class="t-small muted">متوافقة مع هيئة الزكاة</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item"><a class="nav__link" href="#forms">النماذج</a></div>
+      <div class="nav__item"><a class="nav__link" href="#price">الباقات</a></div>
+      <div class="nav__item"><a class="nav__link" href="#who">العملاء</a></div>
+      <div class="nav__item"><a class="nav__link" href="#faq">الأسئلة</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary" href="#price">ابدأ مجاناً</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="القائمة">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero hero--centred ground-inverse" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text">
+      <div class="hero__c">
+        <a class="pill" href="#forms"><span>فواتير معتمدة من هيئة الزكاة</span><span class="muted">شوف النماذج</span></a>
+        <h1 id="hero-h">نظام إدارة مراكز صيانة المركبات</h1>
+        <p class="hero__lead">تابع كل سيارة من الاستقبال إلى الفاتورة المعتمدة، واطلب القطع من الموردين، وأدر فروعك وموظفيك من الجوال أو الحاسوب. الباقة المجانية حتى 5 مستخدمين.</p>
+        <div class="btn-row"><a class="btn btn--primary" href="#price">ابدأ مجاناً</a><a class="btn btn--secondary" href="#features">شوف شاشات النظام</a></div>
+      </div>
+      <div class="hero__window" role="img" aria-label="قائمة طلبات الإصلاح في ورشة دايركت، وطلب كامري مفتوح عند مرحلة القطع">
+        <div class="ui app" data-ui-pause-host aria-hidden="true">
+          <div class="app__pane app__pane--list">
+            <div class="ui ui-panel ui-win" data-ui="window" data-open="مفتوح" data-work="قيد العمل" data-done="جاهزة">
+              <div class="ui-win__bar">
+                <span class="ui-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="ui-win__crumb">طلبات الإصلاح</span>
+                <span class="ui-spacer"></span>
+                <span class="ui-win__search" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg><span class="ui-win__ph">بحث برقم اللوحة</span></span>
+              </div>
+              <div class="ui-win__body">
+                <nav class="ui-win__side" aria-hidden="true">
+                  <span class="ui-win__nav is-on">المفتوحة<em>18</em></span>
+                  <span class="ui-win__nav">بانتظار القطع<em>4</em></span>
+                  <span class="ui-win__nav">جاهزة للتسليم<em>3</em></span>
+                  <span class="ui-win__nav">المسلّمة</span>
+                  <span class="ui-win__label">الفروع</span>
+                  <span class="ui-win__nav"><span class="ui-win__hash">#</span>الفرع الرئيسي</span>
+                  <span class="ui-win__nav"><span class="ui-win__hash">#</span>فرع الصناعية</span>
+                </nav>
+                <div class="ui-win__main">
+                  <div class="ui-win__cols" aria-hidden="true"><span>المركبة</span><span>العمل</span><span>الحالة</span><span>منذ</span></div>
+                  <ul class="ui-win__rows">
+                    <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="1">ك</span><span class="ui-win__who">تويوتا كامري</span><span class="ui-win__sub">صدام أمامي وباب</span><span class="ui-win__st" data-st>مفتوح</span><span class="ui-win__age">٢ د</span></li>
+                    <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="3">ه</span><span class="ui-win__who">هيونداي سوناتا</span><span class="ui-win__sub">صيانة دورية</span><span class="ui-win__st" data-st>مفتوح</span><span class="ui-win__age">٩ د</span></li>
+                    <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="4">ن</span><span class="ui-win__who">نيسان باترول</span><span class="ui-win__sub">مطالبة تأمين</span><span class="ui-win__st" data-st>مفتوح</span><span class="ui-win__age">٢٠ د</span></li>
+                    <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="2">ف</span><span class="ui-win__who">فورد تورس</span><span class="ui-win__sub">مصباح خلفي</span><span class="ui-win__st is-you" data-st>بانتظار القطع</span><span class="ui-win__age">١ س</span></li>
+                    <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="5">ل</span><span class="ui-win__who">لكزس ES</span><span class="ui-win__sub">زجاج أمامي</span><span class="ui-win__st is-done" data-st>جاهزة</span><span class="ui-win__age">٣ س</span></li>
+                    <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="3">ش</span><span class="ui-win__who">شفروليه تاهو</span><span class="ui-win__sub">سمكرة ودهان</span><span class="ui-win__st is-done" data-st>جاهزة</span><span class="ui-win__age">٥ س</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="app__pane app__pane--open" data-ui-loop>
+            <div class="ui ui-panel ui-checks" data-ui="checklist">
+              <div class="ui-checks__head">
+                <div class="ui-title">طلب كامري، أ ب ج ١٢٣٤</div>
+                <span class="ui-spacer"></span>
+                <div class="ui-meta" data-checks-count>٢ من ٥</div>
+              </div>
+              <div class="ui-checks__bar"><i data-checks-bar style="--k:0.4"></i></div>
+              <ul class="ui-checks__list">
+                <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">الاستقبال ووثيقة الدخول</span></li>
+                <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">الفحص وعرض السعر</span></li>
+                <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">طلب الصدام من المورد</span></li>
+                <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">الإصلاح عند فني الهيكل</span></li>
+                <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">الفاتورة والمخالصة النهائية</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="section" id="statement" aria-labelledby="statement-h">
+    <div class="wrap">
+      <div data-moment="liquid-type" class="section-head" style="max-width:none">
+        <h2 id="statement-h" class="mo-lt__type" style="font-size:clamp(64px,8vw,120px);line-height:1.2">من الاستقبال إلى التسليم</h2>
+        <p class="t-lead">كل سيارة تمر بخمس مراحل في النظام، وعميلك يتابع الحالة من جواله.</p>
+        <ol class="stages">
+          <li style="--i:0"><b>1</b><span>الاستقبال</span><small>وثيقة دخول رقمية</small></li>
+          <li style="--i:1"><b>2</b><span>الفحص والتسعير</span><small>تحليل الأضرار بالذكاء الاصطناعي</small></li>
+          <li style="--i:2"><b>3</b><span>القطع</span><small>طلب مباشر من المورد</small></li>
+          <li style="--i:3"><b>4</b><span>الإصلاح</span><small>مهام الفنيين</small></li>
+          <li style="--i:4"><b>5</b><span>التسليم</span><small>فاتورة ضريبية ومخالصة</small></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section g2" id="features" aria-labelledby="features-h">
+    <div class="wrap">
+      <div class="group">
+        <div class="section-head">
+          <h2 id="features-h">أربع شاشات تدير بها الورشة. <span class="muted">كلها في نفس النظام.</span></h2>
+        </div>
+        <div class="grid">
+          <article class="card card--row card--open span-6">
+            <h3>يتابع المخزون والمشتريات</h3>
+            <p>كل قطعة بتكلفتها وكميتها، والطلب يروح للمورد مباشرة من الشاشة.</p>
+            <div class="panel"><img class="frame__img" src="../v4/assets/client/cms_OBvKPgWP.png" alt="شاشة المخزون في ورشة دايركت" loading="lazy"></div>
+          </article>
+          <article class="card card--row card--open span-6">
+            <h3>يحجز المواعيد من الجوال</h3>
+            <p>العميل يحجز موعده ويتابع حالة سيارته بنفسه بدون ما يتصل.</p>
+            <div class="panel"><img class="frame__img" src="../v4/assets/client/cms_DKXU7EfT.png" alt="سجل المواعيد على الحاسوب والجوال" loading="lazy"></div>
+          </article>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card card--row card--open span-6">
+          <h3>يوزع الصلاحيات على الموظفين</h3>
+          <p>كل موظف يشوف اللي يخصه، وكل الفروع تحت إدارة وحدة.</p>
+          <div class="panel"><img class="frame__img" src="../v4/assets/client/cms_RMWR3lqF.png" alt="شاشة الموظفين ومعلومات الفرع" loading="lazy"></div>
+        </article>
+        <article class="card card--row card--open span-6">
+          <h3>يعرض أداء الورشة اليوم</h3>
+          <p>طلبات اليوم والمكتملة وطلبات القطع في لوحة أداء وحدة.</p>
+          <div class="panel"><img class="frame__img" src="../v4/assets/client/cms_izVBRQiu.png" alt="لوحة الأداء وطلبات الإصلاح" loading="lazy"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ground-surface" id="forms" aria-labelledby="forms-h">
+    <div class="wrap">
+      <div class="grid">
+        <div class="section-head span-5">
+          <h2 id="forms-h">خمس نماذج معتمدة تطلع من النظام</h2>
+          <p>الفواتير معتمدة من هيئة الزكاة والضريبة والجمارك، والنماذج متوافقة مع مركز سلامة المركبات، والنظام يتكامل مع <bdi>Oracle</bdi> و<bdi>SAP</bdi> و<bdi>Odoo</bdi>.</p>
+          <div class="marks">
+            <img src="../v4/assets/client/zakat.png" alt="هيئة الزكاة والضريبة والجمارك" width="228" height="50">
+            <img src="../v4/assets/client/VSC.png" alt="مركز سلامة المركبات" width="201" height="50">
+          </div>
+        </div>
+        <div class="frame span-6 start-7" style="--ratio:56%"><img class="frame__img" src="../v4/assets/client/cms_gdkYdS0X.png" alt="ورشة دايركت على الجوال واللوحي والحاسوب" loading="lazy"></div>
+      </div>
+      <div class="chips-wrap" style="margin-top:var(--s-8)">
+        <button class="chips-pause" type="button" aria-label="إيقاف الحركة"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 2h3v10H3zM8 2h3v10H8z"/></svg></button>
+        <div class="chips" style="margin-top:0">
+          <div class="chips__row"><ul class="chips__track"><li>فاتورة ضريبية</li><li>عرض سعر</li><li>وثيقة دخول وخروج المركبة</li><li>استمارة المخالصة النهائية</li><li>استمارة طلب إصلاح</li></ul><ul class="chips__track" aria-hidden="true"><li>فاتورة ضريبية</li><li>عرض سعر</li><li>وثيقة دخول وخروج المركبة</li><li>استمارة المخالصة النهائية</li><li>استمارة طلب إصلاح</li></ul></div>
+          <div class="chips__row chips__row--alt"><ul class="chips__track"><li><bdi>Oracle</bdi></li><li><bdi>SAP</bdi></li><li><bdi>Odoo</bdi></li><li>هيئة الزكاة والضريبة والجمارك</li><li>مركز سلامة المركبات</li></ul><ul class="chips__track" aria-hidden="true"><li><bdi>Oracle</bdi></li><li><bdi>SAP</bdi></li><li><bdi>Odoo</bdi></li><li>هيئة الزكاة والضريبة والجمارك</li><li>مركز سلامة المركبات</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="price" style="--hm: 2" aria-labelledby="price-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="price-h">الباقات بالريال لكل سنة. <span class="muted">ابدأ بالمجانية وترقّى أي وقت.</span></h2>
+      </div>
+      <div class="grid">
+        <article class="card span-3"><h3>المجانية</h3><p class="plan-price">0 <small>ريال</small></p><ul class="stack-2"><li>طلبات الإصلاح</li><li>٥ مستخدمين</li><li>الفواتير الإلكترونية</li></ul><a class="btn btn--primary" href="#signup">ابدأ مجاناً</a></article>
+        <article class="card span-3"><h3>الأساسية</h3><p class="plan-price">1,200 <small>ريال</small></p><ul class="stack-2"><li>كل مزايا المجانية</li><li>حتى ٣ فروع</li></ul><a class="btn btn--secondary" href="#signup">اختر الأساسية</a></article>
+        <article class="card span-3 ground-inverse plan--pick"><span class="plan-badge">الأكثر طلباً</span><h3>الاحترافية</h3><p class="plan-price">2,000 <small>ريال</small></p><ul class="stack-2"><li>كل مزايا الأساسية</li><li>المشتريات والمخزون</li><li>حجز المواعيد</li></ul><a class="btn btn--primary" href="#signup">اختر الاحترافية</a></article>
+        <article class="card span-3"><h3>المميزة</h3><p class="plan-price">3,500 <small>ريال</small></p><ul class="stack-2"><li>كل مزايا الاحترافية</li><li>بوابة الخدمة الذاتية</li><li>الربط مع الموردين</li></ul><a class="btn btn--secondary" href="#signup">اختر المميزة</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ground-surface" id="who" aria-labelledby="who-h">
+    <div class="wrap">
+      <div class="grid">
+        <div class="section-head span-5">
+          <h2 id="who-h">أربعة أطراف على نفس المنصة</h2>
+          <ul class="rows">
+            <li><span class="rows__name">ملاك مراكز الصيانة</span><p>الطلبات والفروع والأرباح في مكان واحد.</p></li>
+            <li><span class="rows__name">ملاك المركبات</span><p>يحجز ويتابع سيارته من جواله.</p></li>
+            <li><span class="rows__name">موردو قطع الغيار</span><p>طلبات مباشرة وتسعير مؤتمت.</p></li>
+            <li><span class="rows__name">شركات تأمين المركبات</span><p>مطالبات تتوجه للورش المعتمدة.</p></li>
+          </ul>
+        </div>
+        <div class="frame span-6 start-7" style="--ratio:68%"><img class="frame__img" src="../v4/assets/client/cms_cbZ5HZRc.png" alt="ورشة دايركت في الوسط، وحولها مراكز الصيانة وملاك المركبات والموردون وشركات التأمين والأنظمة واللوائح" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="grid">
+      <div class="span-5">
+      <div class="section-head"><h2 id="faq-h">الأسئلة الشائعة</h2></div>
+      <div class="faq">
+        <div class="faq__item"><h3>وش هي ورشة دايركت؟</h3><p>نظام سحابي لإدارة مراكز صيانة المركبات: الطلبات، القطع والموردين، المخزون، الفواتير المعتمدة، الموظفين والفروع، ومواعيد العملاء.</p></div>
+        <div class="faq__item"><h3>هل الفواتير معتمدة؟</h3><p>نعم، معتمدة من هيئة الزكاة والضريبة والجمارك، والنماذج متوافقة مع معايير مركز سلامة المركبات.</p></div>
+        <div class="faq__item"><h3>هل فيه باقة مجانية؟</h3><p>نعم، الباقة المجانية تبدأ فيها فوراً حتى ٥ مستخدمين، وتترقى أي وقت.</p></div>
+        <div class="faq__item"><h3>يشتغل على الجوال؟</h3><p>نعم، على الجوال واللوحي والحاسوب.</p></div>
+      </div>
+      </div>
+      <div class="frame span-6 start-7" style="--ratio:67%"><img class="frame__img" src="../v4/assets/client/cms_yp36in8o.png" alt="لوحة ورشة دايركت على الحاسوب والجوال" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer closing footer--dark ground-inverse" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--word">
+      <div class="section-head--split">
+        <div><h2 id="close-h">ابدأ أول طلب إصلاح اليوم</h2><p class="t-lead">الباقة المجانية حتى ٥ مستخدمين، وللاستفسار اتصل على 920010431.</p></div>
+        <a class="btn btn--primary" href="#price">ابدأ مجاناً<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      </div>
+      <p class="close__word" aria-hidden="true">ورشة دايركت</p>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href="#top" aria-label="ورشة دايركت"><img src="../v4/assets/client/direct-logo-white.png" alt="ورشة دايركت" width="276" height="101"></a>
+          <p class="footer__lede">نظام سحابي لإدارة مراكز صيانة المركبات في السعودية.</p>
+        </div>
+        <div class="span-2 footer__col"><h3>النظام</h3><ul><li><a href="#features">الشاشات</a></li><li><a href="#forms">النماذج</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>الباقات</h3><ul><li><a href="#price">الأسعار</a></li><li><a href="#faq">الأسئلة</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>العملاء</h3><ul><li><a href="#who">الأطراف</a></li><li><a href="#statement">المراحل</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>تواصل</h3><ul><li><a href="mailto:support@warshadirect.com">البريد</a></li><li><a href="tel:920010431"><bdi>920010431</bdi></a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; 2026 ورشة دايركت</span>
+        <div class="socials"></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<nav class="actionbar" aria-label="إجراءات سريعة">
+  <a class="btn btn--primary" href="#price">ابدأ مجاناً</a>
+</nav>
+
+<script type="module" src="../v4/assets/system.js"></script>
+<script type="module" src="../v4/assets/motion/motion.js"></script>
+<script type="module" src="../v4/assets/layout/layout.js"></script>
+<script>
+(() => {
+  const s = document.querySelector('.stages');
+  if (s && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('js-stages');
+    new IntersectionObserver((es, io) => { if (es.some(e => e.isIntersecting)) { s.classList.add('is-on'); io.disconnect(); } }, { threshold: .4 }).observe(s);
+  }
+  const w = document.querySelector('.chips-wrap'), b = w && w.querySelector('.chips-pause');
+  if (b) b.addEventListener('click', () => {
+    const p = w.classList.toggle('is-paused');
+    b.setAttribute('aria-label', p ? 'تشغيل الحركة' : 'إيقاف الحركة');
+    b.innerHTML = p ? '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2l8 5-8 5z"/></svg>' : '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 2h3v10H3zM8 2h3v10H8z"/></svg>';
+  });
+})();
+</script>
+</body>
+</html>
